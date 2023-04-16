@@ -16,7 +16,7 @@
 
 * W skład nawigacji wchodzi `nagłówek trzeciego rzędu` oraz pięć `hiperłącz`.
 
-* W artykule znajduje się `nagłówek drugiego stopnia`, `akapit`, trzyelementowa `lista opisowa`, `pozioma linia` oraz kolejne dwa `akapity`.
+* W artykule znajduje się `nagłówek drugiego stopnia`, `akapit`, trzyelementowa `lista opisowa` (znacznik `dl`), `pozioma linia` oraz kolejne dwa `akapity`.
 
 * Element poboczny zawiera znacznik `figure` z grafiką - plik `banner.png`.
 
@@ -31,7 +31,7 @@
 
 ## Body
 
-* Minimalna wysokość: 100vh,
+* Minimalna wysokość: *100*vh,
 
 * Sposób wyświetlania: `flex`,
 
@@ -133,6 +133,6 @@
 
 ---
 
-Strona powinna w jak największym stopniu przypominać załączoną grafikę:
-
 ![Sample](web.png)
+
+Strona powinna w jak największym stopniu przypominać załączoną grafikę.
