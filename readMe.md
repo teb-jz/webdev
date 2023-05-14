@@ -1,84 +1,233 @@
-# Pobieranie elementu
+# Spis treści
 
-Do odniesienia się do pojedynczych elementów można wykorzystać metody obiektu `document`:
-- `querySelector` &ndash; jako parametr podajemy selektor znany z `css`,
-- `getElementById` &ndash; parametrem jest **id** elementu.
+1. [Wprowadzenie](#wprowadzenie)
+    - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
+    - [Komunikaty konsoli](#komunikaty-konsoli)
+2. [Zmienne](#zmienne)
+    - [Zmienne i stałe](#zmienne-i-stałe)
+    - [Typy danych](#typy-danych)
+    - [Konwersje typów](#konwersje-typów)
+3. [Operatory](#operatory)
+    - [Operatory arytmetyczne](#operatory-arytmetyczne)
+    - [Dodatkowe operatory przypisania](#dodatkowe-operatory-przypisania)
+    - [Operatory relacyjne](#operatory-relacyjne)
+    - [Operatory logiczne](#operatory-logiczne)
+4. [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
+5. [Polecenia](#polecenia)
 
-```js
-const e1 = document.querySelector('#sampleId');
-const e2 = document.getElementById('sampleId');
+# Wprowadzenie
+
+**JavaScript** to **hybrydowy język programowania** wykorzystywany między innymi na stronach internetowych.
+
+## Umieszczanie skryptu na stronie
+
+Na stronie można umieścić skrypt na dwa podstawowe sposoby. Wykorzystujemy w tym celu znacznik `<script>`, zazwyczaj na końcu kodu witryny.
+
+```html
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Lorem ipsum</p>
+
+    <script>
+        console.log("Hello world!");
+    </script>
+
+</body>
+</html>
 ```
 
-W przypadku zbioru elementów &ndash; kolekcji:
-- `querySelectorAll` &ndash; jak wyżej, selektor `css`,
-- `getElementsByClassName` &ndash; parametrem jest nazwa **klasy** elementów.
+W przypadku niewielkich skryptów, cały kod można umieścić pomiędzy znacznikami `<script>`.
 
-```js
-const e1 = document.querySelectorAll('.sampleClass');
-const e2 = document.getElementsByClassName('sampleClass');
+```html
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <p>Lorem ipsum</p>
+    
+    <script src = "main.js"></script>
+
+</body>
+</html>
 ```
 
-# Obsługa zdarzeń
+Zazwyczaj jednak skrypt umieszczamy w oddzielnym pliku o rozszerzeniu `js`, a następnie importujemy, podając jego ścieżkę w atrybucie `src`.
 
-Chcąc obsłużyć dane **zdarzenie** należy odwołać się do interesującego nas elementu i dodać **nasłuch zdarzenia** za pomocą metody `addEventListener`, określając jego typ, na przykład `click`, oraz precyzując co ma się wykonać po jego wystąpieniu, podając funkcję, która ma się wtedy wykonać.
+> Jeżeli znacznik `<script>` posiada atrybut `src`, powinien pozostać pusty.
 
-```js
-function clicked () {
+## Komunikaty konsoli
 
-    console.log('clicked');
-}
-
-const button = document.querySelector('button');
-
-button.addEventListener('click', clicked);
-```
-
-Przykładowe zdarzenia:
-- `click` &ndash; naciśnięcie,
-- `mouseover` &ndash; najechanie kursorem,
-- `input` &ndash; wprowadzanie danych (tylko `input`).
-
-# Zmiana elementów
-
-## Klasy
-
-Korzystając z pola `classList` jesteśmy w stanie edytować listę klas danego elementu:
-- `add` &ndash; dodawanie,
-- `remove` &ndash; usuwanie,
-- `toggle` &ndash; przełączanie.
+W prostych przypadkach testowania kodu często posługujemy się komunikatami konsoli. Wyróżniamy trzy podstawowe **metody**:
 
 ```js
-const block = document.querySelector('div');
-
-block.classList.add('sampleClass');
-block.classList.remove('sampleClass');
-block.classList.toggle('sampleClass');
+console.log("Informacja");
+```
+```js
+console.warn("Ostrzeżenie");
+```
+```js
+console.error("Błąd");
 ```
 
-## Zawartość
+Różnią się one pomiędzy sobą wyglądem w konsoli. Przy ich pomocy można wyświetlać na przykład komunikaty, czy wartości poszczególnych **zmiennych**.
 
-Do zawartości elementów możemy odnieść się przy pomocy `textContent`, `innerText` oraz `innerHTML`. Ostatnie pole, w przeciwieństwie do pozostałych, rozróżnia znaczniki **HTML**, pozwalając na prymitywne tworzenie struktury dokumentu.
+# Zmienne
+
+Zmienna to pewne wydzielone miejsce w pamięci komputera, gdzie mogą być przechowywane dane. Wartością zmiennej może być na przykład liczba lub ciąg znaków. Zmienna musi posiadać nazwę symboliczną, przez którą można odwoływać się do niej w kodzie.
+
+## Zmienne i stałe
 
 ```js
-const span = document.querySelector('span');
-
-span.textContent = "new text";
-span.innerText = "new text";
-
-span.innerHTML = "<p>new text</p>";
+let zmienna;
 ```
 
-## Style
-
-Pole `style` pozwala na nadawanie stylów wybranym elementom. Posiada wbudowane odwołania do atrybutów znanych z `css`.
+Przy **deklarowaniu** zmiennej korzystamy ze słowa kluczowego `let`.
 
 ```js
-const paragraph = document.querySelector('p');
-
-paragraph.style.color = 'purple';
-paragraph.style.fontSize = '32px';
-
-paragraph.style.cssText = "text-decoration: underline; font-style: italic;";
+const stala = 3.14;
 ```
 
-Do dyspozycji mamy również pole `cssText`, dzięki któremu jesteśmy w stanie sprecyzować wiele styli na raz.
+W przypadku stałej, wymaganym słowem kluczowym jest `const`. Wartości stałej nie jesteśmy już w stanie zmienić po jej utworzeniu, zatem musimy od razu ją **zainicjalizować**, korzystając ze znaku przypisania `=`.
+
+```js
+let x = 9;
+
+x = 11;
+```
+
+Po zadeklarowaniu zmiennej lub stałej, przy kolejnych odołaniach pomijamy słowa kluczowe.
+
+## Typy danych
+
+**JavaScript** cechuje **typowanie dynamiczne**, oznacza to, że nie musimy jawnie wskazywać typu danej zmiennej. Jest on nadawany automatycznie w zależności od przechowywanej przez nią wartości. Podstawowe typy wbudowane oferowane przez język to:
+
+- `Number` - liczba,
+- `String` - ciąg/łańcuch znaków, napis,
+- `Boolean` - wartość logiczna,
+- `Object` - obiekt,
+- `Null` - brak wartości,
+- `Undefined` - wartość nieokreślona.
+
+## Konwersje typów
+
+Wartości można **konwertować** pomiędzy poszczególnymi typami, dzięki temu mogą zostać inaczej interpretowane. W tym celu posłużą nam funkcje wbudowane:
+- `parseInt` - rzutowanie na liczbę zmiennoprzecinkową,
+- `parseFloat` - rzutowanie na liczbę całkowitą.
+
+```js
+const number = 2.13;
+const integer = parseInt(number);
+```
+
+# Operatory
+
+**JavaScript** podobnie jak inne języki oferuje szereg różnych operatorów, dzięki którym możemy operować na wartościach.
+
+## Operatory arytmetyczne
+
+|Operator|Opis|Przykład|
+|:-:|:--|:-:|
+|`+`|Dodawanie|`a + 4`|
+|`-`|Odejmowanie|`1 - b`|
+|`*`|Mnożenie|`7 * 8`|
+|`/`|Dzielenie|`a / 1.5`|
+|`%`|Reszta z dzielenia (*modulo*)|`a % 2`|
+|`**`|Potęgowanie|`b ** 2`|
+
+## Dodatkowe operatory przypisania
+
+Często będziemy musieli zmieniać wartość danej zmiennej, nadpisując ją inną wartością.
+
+```js
+let number = 5
+number = number + 2
+```
+
+Przykładowo, liczbę możemy nadpisać wartością o 2 większą, przypisując jej nową wartość w postaci sumy jej starej wartości i liczby 2. Taki zapis można skrócić przy pomocy danych operatorów dwuargumentowych:
+
+- `+=`,
+- `-=`,
+- `*=`,
+- `/=`,
+- `%=`.
+- `**=`.
+
+Oraz jednoargumentowych:
+- `++`,
+- `--`.
+
+Operator `++` odpowiedzialna jest za zwiększenie wartości zmiennej o *1*. Jest to tak zwana **inkrementacja**. Zmniejszenie wartości o *1* nazywamy **dekrementacją** i oznaczamy przez `--`.
+
+|Operator|Opis|Przykład|
+|:-:|:--|:-:|
+|`+`|Dodawanie|`a + 4`|
+|`-`|Odejmowanie|`1 - b`|
+|`*`|Mnożenie|`7 * 8`|
+|`/`|Dzielenie|`a / 1.5`|
+|`%`|Reszta z dzielenia (*modulo*)|`a % 2`|
+|`**`|Potęgowanie|`b ** 2`|
+
+## Operatory relacyjne
+
+**Operatory relacyjne** są wykorzystywane najczęściej jako elementy warunków pętli lub instrukcji warunkowcyh. Zwracają one wartość logiczną.
+
+|Operator|Opis|Przykład|
+|:-:|:--|:-:|
+|`==`|Równe (wartości)|`a == "4"`|
+|`===`|Równe (wartości i typy)|`a === "4"`|
+|`!=`|Różne (wartości)|`b != 3`|
+|`!==`|Różne (wartości lub typy)|`b !== "−3"`|
+|`>`|Większe|`a > b`|
+|`>=`|Większe lub równe|`b >= −4`|
+|`<`|Mniejsze|`2 < a`|
+|`<=`|Mniejsze lub równe|`a <= b`|
+
+## Operatory logiczne
+
+Operatory logiczne używa się do konstruowania warunków złożonych.
+
+|Operator|Opis|Przykład|
+|:-:|:--|:-:|
+|`&&`|Koniunkcja (i, oraz, *and*)|`a > −4 && a < = 4`|
+|`\|\|`|Alternatywa (lub, *or*)|`b === −2 \|\| b === 2`|
+|`!`|Negacja (*not*)|`!b`|
+
+# Komunikacja z użytkownikiem
+
+Najprostszym i najbardziej prymitywnym sposobem komunikacji z użytkownikiem są okna dialogowe. Wyróżniamy kilka podstawowych metod:
+
+```js
+window.alert("Informacja");
+```
+
+Metoda `alert` wyświetla informację.
+
+```js
+const value = window.confirm("Potwierdzenie");
+```
+
+`confirm` wyświetla tekst, oczekując wybrania jednego z dwóch przycisków. Metoda zwraca wartość logiczną w zależności od wyboru, którą można przypisać na przykład do zmiennej i wykorzystać na dalszym etapie.
+
+```js
+const value = window.prompt("Pytanie");
+```
+
+Metoda `prompt` wyświetla tekst, oczekując wprowadzenie tekstu, po wciśnięciu przycisku wartość jest zwracana.
+
+> Każda wartość wprowadzona przez użytkownika poprzez klawiaturę jest interpretowana jako ciąg znaków. Jeżeli oczekujemy innej interpretacji należy zastosować zmianę typu.
+
+# Polecenia
+
+1. Zadeklarować **zmienną** i zainicjalizować ją wartością liczbową pobraną od użytkownika (`prompt`), sprawdzić czy jest parzysta i w zależnośći od wyniku wyświetlić odpowiedni komunikat (`alert`).
+2. Zadeklarować **stałą** i zainicjalizować ją wartością pobraną od użytkownika (`prompt`), sprawdzić czy leży w przedziale *(5; 20]* i w zależnośći od wyniku wyświetlić odpowiedni komunikat (`alert`).
+3. Zadeklarować dwie **stałe** i zainicjalizować je wartościmi pobranymi od użytkownika (`prompt`), a następnie wyświetlić ich średnią arytmetyczną (`alert`).
