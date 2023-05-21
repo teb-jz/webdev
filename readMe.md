@@ -13,7 +13,15 @@
     - [Operatory relacyjne](#operatory-relacyjne)
     - [Operatory logiczne](#operatory-logiczne)
 4. [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
-5. [Polecenia](#polecenia)
+5. [Instrukcje warunkowe](#instrukcje-warunkowe)
+    - [Konstrukcja instrukcji warunkowej](#konstrukcja-instrukcji-warunkowej)
+    - [Złożone instrukcje warunkowe](#złożone-instrukcje-warunkowe)
+    - [Switch](#switch)
+    - [Polecenia](#polecenia---instrukcje-warunkowe)
+6. [Document object model](#document-object-model)
+    - [Pobieranie elementu](#pobieranie-elementu)
+    - [Zarządzanie własnościami elementów](#zarządzanie-własnościami-elementów)
+    - [Polecenia](#polecenia---document-object-model)
 
 # Wprowadzenie
 
@@ -226,8 +234,180 @@ Metoda `prompt` wyświetla tekst, oczekując wprowadzenie tekstu, po wciśnięci
 
 > Każda wartość wprowadzona przez użytkownika poprzez klawiaturę jest interpretowana jako ciąg znaków. Jeżeli oczekujemy innej interpretacji należy zastosować zmianę typu.
 
-# Polecenia
+# Instrukcje warunkowe
+
+Instrukcje warunkowe w programowaniu służą do warunkowego wykonywania instrukcji, w zależności od tego, czy dany warunek jest spełniony.
+
+## Konstrukcja instrukcji warunkowej
+
+Instrukcja warunkowa jest spełniona, gdy zawarty w niej warunek jest prawdziwy - zwraca wartość logiczną `true`. W przypadku wartości fałszywej - `false`, wskazane instrukcje nie zostaną wykonane.
+
+```js
+const condition = true;
+
+if (condition) {
+
+    console.log("Warunek jest spełniony");
+}
+```
+
+Po słowie kluczowym `if`, wewnątrz nawiasów okrągłych, następuje warunek. Blok kodu, czyli wszystkie instrukcje, które mają zostać wykonane w obrębie instrukcji warunkowej (mają zostać wykonane pod warunkiem), wyznaczają nawiasy klamrowe. Warunkiem może być zmienna lub całe wyrażenie.
+
+> W powyższym przykładzie sprawdzana jest wartość zmiennej condition. Została ona zainicjowana wartością `true` - wartość jest prawdą, co jest równoznaczne ze spełnieniem warunku.
+
+```js
+if (condition)
+    console.log("Warunek jest spełniony");
+```
+
+W przypadku pojedynczej linii kodu, można pominąć nawiasy klamrowe.
+
+## Złożone instrukcje warunkowe
+
+Po instrukcji `if` można dodawać warunki alternatywne za pośrednictwem instrukcji `else if`. Na samym końcu można dodatkowo zdefiniować działanie dla pozostałych przypadków - czyli sytuacji, w której żaden z poprzednich warunków nie został spełniony - `else`.
+
+```js
+const number = 2.13;
+
+if (number > 0)
+    console.log("Liczba jest dodatnia.")
+
+else if (number < 0)
+    console.log("Liczba jest ujemna.")
+
+else
+    console.log("Liczba jest równa 0.")
+```
+
+## Switch
+
+W przypadku bardzo precyzyjnych warunków instrukcje warunkowe mogą okazać się niewystarczająco czytelne. Alternatywą może być konstrukcja `switch`.
+
+```js
+const key = 'b';
+
+switch (key) {
+
+    case 'a':
+
+        console.log("Wprowadzona litera to 'a'.");
+        break;
+
+    case 'b':
+
+        console.log("Wprowadzona litera to 'b'.");
+        break;
+
+    default:
+
+        console.log("Wprowadzono inną literę.");
+        break;
+}
+```
+
+Po słowie kluczowym `switch` wskazujemy zmienną, której wartość zadecyduje o przeprowadzonych operacjach. W zależności od jej wartości wybierany jest odpowiedni przypadek - `case`. Na końcu umieszczamy przypadek domyślny - `default`. Każdy przypadek kończymy instrukcją `break`.
+
+## Polecenia - instrukcje warunkowe
 
 1. Zadeklarować **zmienną** i zainicjalizować ją wartością liczbową pobraną od użytkownika (`prompt`), sprawdzić czy jest parzysta i w zależnośći od wyniku wyświetlić odpowiedni komunikat (`alert`).
 2. Zadeklarować **stałą** i zainicjalizować ją wartością pobraną od użytkownika (`prompt`), sprawdzić czy leży w przedziale *(5; 20]* i w zależnośći od wyniku wyświetlić odpowiedni komunikat (`alert`).
 3. Zadeklarować dwie **stałe** i zainicjalizować je wartościmi pobranymi od użytkownika (`prompt`), a następnie wyświetlić ich średnią arytmetyczną (`alert`).
+4. Wykorzystując instrukcję `switch`, napisać kalkulator prosty. Skrypt, przy pomocy `prompt`, powinien pobierać trzy wartości od użytkownika. Pierwsza i trzecia będą liczbami – argumentami wybranego działania matematycznego. Druga wartość będzie określała znak operacji (`+`, `-`, `*` lub `/`). Na koniec wyświetlić w informacyjnym oknie dialogowym (`alert`) wynik wybranej operacji.
+
+# Document Object Model
+
+Sposób reprezentacji struktury dokumentu w formie drzewa. Metody **DOM** pozwalają na interakcję z dokumentem, zmianę struktury, stylu czy zawartości.
+
+## Pobieranie elementu
+
+Do odniesienia się do pojedynczych elementów można wykorzystać metody obiektu `document`:
+- `querySelector` &ndash; jako parametr podajemy selektor znany z `css`,
+- `getElementById` &ndash; parametrem jest **id** elementu.
+
+```html
+<div id = "sampleId">Block</div>
+
+<script>
+    const e1 = document.querySelector('#sampleId');
+    const e2 = document.getElementById('sampleId');
+
+    console.log(e1);
+    console.log(e2);
+</script>
+```
+
+W przypadku zbioru elementów:
+- `querySelectorAll` &ndash; jak wyżej, selektor `css`,
+- `getElementsByClassName` &ndash; parametrem jest nazwa **klasy** elementów.
+
+```html
+<div class = "sampleClass">Block #1</div>
+<div class = "sampleClass">Block #2</div>
+
+<script>
+    const e1 = document.querySelectorAll('.sampleClass');
+    const e2 = document.getElementsByClassName('sampleClass');
+
+    console.log(e1);
+    console.log(e2);
+</script>
+```
+
+## Zarządzanie własnościami elementów
+
+Po pobraniu elementu możemy dowolnie nim zarządzać. Między innymi zmieniać jego zawartość.
+
+```html
+<div id = "first">Text</div>
+<div id = "second">Text</div>
+
+<script>
+    const e1 = document.querySelector("#first");
+    const e2 = document.querySelector("#second");
+
+    e1.innerText = "New text";
+    e2.innerHTML = "<p>Another text</p>";
+</script>
+```
+
+Metoda `innerText` pozwala na zmianę lub pobranie tekstu znajdującego się w danym elemencie. `innerHTML` działa podobnie, ale pozwala dodatkowo na prymitywne nadawanie struktury witrynie.
+
+```html
+<div>Block</div>
+
+<script>
+    const element = document.querySelector("div");
+
+    element.classList.add("className");
+</script>
+```
+
+Innym przydatnym polem jest `classList`. Pozwala ono na zarządzanie klasami elementu. Posiada metody takie jak `add`, `remove` i `toggle`.
+
+```html
+<div>Block</div>
+
+<script>
+    const element = document.querySelector("div");
+
+    element.classList.add("className");
+</script>
+```
+
+Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywania klas.
+
+```html
+<div>Block</div>
+
+<script>
+    const element = document.querySelector("div");
+
+    element.style.backgroundColor = "grey";
+</script>
+```
+
+## Polecenia - Document Object Model
+
+1. Przy pomocy okna dialogowego `prompt` pobrać od użytkownika przykładowy tekst i umieścić go na stronie w stworzonym elemencie liniowym `span`. Skorzystać z pola `innerHTML`.
+2. Zmodyfikuj polecenie z kalkulatorem prostym tak, by wynik wyświetlał się wewnątrz elementu blokowego `div` na stronie. Element blokowy ma mieć nadaną klasę w zależności od wykonanego działania ("dodawanie", "odejmowanie", "mnozenie", "dzielenie").
+3. Przy pomocy okna dialogowego `prompt` pobrać od użytkownika nazwę koloru ("red", "green", "blue", "yellow", "purple") i na jej podstawie zmienić kolor tła elementu `body`. W przypadku podania błędnej wartości kolor ma zmienić się na biały. Zastosować instrukcję `switch`.
