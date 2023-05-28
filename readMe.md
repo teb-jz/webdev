@@ -129,8 +129,8 @@ Po zadeklarowaniu zmiennej lub stałej, przy kolejnych odołaniach pomijamy sło
 ## Konwersje typów
 
 Wartości można **konwertować** pomiędzy poszczególnymi typami, dzięki temu mogą zostać inaczej interpretowane. W tym celu posłużą nam funkcje wbudowane:
-- `parseInt` - rzutowanie na liczbę zmiennoprzecinkową,
-- `parseFloat` - rzutowanie na liczbę całkowitą.
+- `parseInt` - rzutowanie na liczbę całkowitą,
+- `parseFloat` - rzutowanie na liczbę zmiennoprzecinkową.
 
 ```js
 const number = 2.13;
