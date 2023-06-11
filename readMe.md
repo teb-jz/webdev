@@ -129,8 +129,8 @@ Po zadeklarowaniu zmiennej lub stałej, przy kolejnych odołaniach pomijamy sło
 ## Konwersje typów
 
 Wartości można **konwertować** pomiędzy poszczególnymi typami, dzięki temu mogą zostać inaczej interpretowane. W tym celu posłużą nam funkcje wbudowane:
-- `parseInt` - rzutowanie na liczbę całkowitą,
-- `parseFloat` - rzutowanie na liczbę zmiennoprzecinkową.
+- `parseInt` - rzutowanie na liczbę zmiennoprzecinkową,
+- `parseFloat` - rzutowanie na liczbę całkowitą.
 
 ```js
 const number = 2.13;
@@ -175,15 +175,6 @@ Oraz jednoargumentowych:
 - `--`.
 
 Operator `++` odpowiedzialna jest za zwiększenie wartości zmiennej o *1*. Jest to tak zwana **inkrementacja**. Zmniejszenie wartości o *1* nazywamy **dekrementacją** i oznaczamy przez `--`.
-
-|Operator|Opis|Przykład|
-|:-:|:--|:-:|
-|`+`|Dodawanie|`a + 4`|
-|`-`|Odejmowanie|`1 - b`|
-|`*`|Mnożenie|`7 * 8`|
-|`/`|Dzielenie|`a / 1.5`|
-|`%`|Reszta z dzielenia (*modulo*)|`a % 2`|
-|`**`|Potęgowanie|`b ** 2`|
 
 ## Operatory relacyjne
 
