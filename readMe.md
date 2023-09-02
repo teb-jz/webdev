@@ -1,27 +1,30 @@
 # Spis treści
 
-1. [Wprowadzenie](#wprowadzenie)
-    - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
-    - [Komunikaty konsoli](#komunikaty-konsoli)
-2. [Zmienne](#zmienne)
-    - [Zmienne i stałe](#zmienne-i-stałe)
-    - [Typy danych](#typy-danych)
-    - [Konwersje typów](#konwersje-typów)
-3. [Operatory](#operatory)
-    - [Operatory arytmetyczne](#operatory-arytmetyczne)
-    - [Dodatkowe operatory przypisania](#dodatkowe-operatory-przypisania)
-    - [Operatory relacyjne](#operatory-relacyjne)
-    - [Operatory logiczne](#operatory-logiczne)
-4. [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
-5. [Instrukcje warunkowe](#instrukcje-warunkowe)
-    - [Konstrukcja instrukcji warunkowej](#konstrukcja-instrukcji-warunkowej)
-    - [Złożone instrukcje warunkowe](#złożone-instrukcje-warunkowe)
-    - [Switch](#switch)
-    - [Polecenia](#polecenia---instrukcje-warunkowe)
-6. [Document object model](#document-object-model)
-    - [Pobieranie elementu](#pobieranie-elementu)
-    - [Zarządzanie własnościami elementów](#zarządzanie-własnościami-elementów)
-    - [Polecenia](#polecenia---document-object-model)
+- [Spis treści](#spis-treści)
+- [Wprowadzenie](#wprowadzenie)
+  - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
+  - [Komunikaty konsoli](#komunikaty-konsoli)
+- [Zmienne](#zmienne)
+  - [Zmienne i stałe](#zmienne-i-stałe)
+  - [Typy danych](#typy-danych)
+  - [Konwersje typów](#konwersje-typów)
+- [Operatory](#operatory)
+  - [Operatory arytmetyczne](#operatory-arytmetyczne)
+  - [Dodatkowe operatory przypisania](#dodatkowe-operatory-przypisania)
+  - [Operatory relacyjne](#operatory-relacyjne)
+  - [Operatory logiczne](#operatory-logiczne)
+- [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
+- [Instrukcje warunkowe](#instrukcje-warunkowe)
+  - [Konstrukcja instrukcji warunkowej](#konstrukcja-instrukcji-warunkowej)
+  - [Złożone instrukcje warunkowe](#złożone-instrukcje-warunkowe)
+  - [Switch](#switch)
+  - [Polecenia - instrukcje warunkowe](#polecenia---instrukcje-warunkowe)
+- [Document Object Model](#document-object-model)
+  - [Pobieranie elementu](#pobieranie-elementu)
+  - [Zarządzanie własnościami elementów](#zarządzanie-własnościami-elementów)
+  - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
+  - [Obsługa zdarzeń](#obsługa-zdarzeń)
+  - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
 
 # Wprowadzenie
 
@@ -348,6 +351,8 @@ W przypadku zbioru elementów:
 
 Po pobraniu elementu możemy dowolnie nim zarządzać. Między innymi zmieniać jego zawartość.
 
+Metoda `innerText` pozwala na zmianę lub pobranie tekstu znajdującego się w danym elemencie. `innerHTML` działa podobnie, ale pozwala dodatkowo na prymitywne nadawanie struktury witrynie.
+
 ```html
 <div id = "first">Text</div>
 <div id = "second">Text</div>
@@ -358,18 +363,6 @@ Po pobraniu elementu możemy dowolnie nim zarządzać. Między innymi zmieniać 
 
     e1.innerText = "New text";
     e2.innerHTML = "<p>Another text</p>";
-</script>
-```
-
-Metoda `innerText` pozwala na zmianę lub pobranie tekstu znajdującego się w danym elemencie. `innerHTML` działa podobnie, ale pozwala dodatkowo na prymitywne nadawanie struktury witrynie.
-
-```html
-<div>Block</div>
-
-<script>
-    const element = document.querySelector("div");
-
-    element.classList.add("className");
 </script>
 ```
 
@@ -397,8 +390,33 @@ Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywani
 </script>
 ```
 
-## Polecenia - Document Object Model
+## Polecenia #1 - Document Object Model
 
 1. Przy pomocy okna dialogowego `prompt` pobrać od użytkownika przykładowy tekst i umieścić go na stronie w stworzonym elemencie liniowym `span`. Skorzystać z pola `innerHTML`.
 2. Zmodyfikuj polecenie z kalkulatorem prostym tak, by wynik wyświetlał się wewnątrz elementu blokowego `div` na stronie. Element blokowy ma mieć nadaną klasę w zależności od wykonanego działania ("dodawanie", "odejmowanie", "mnozenie", "dzielenie").
 3. Przy pomocy okna dialogowego `prompt` pobrać od użytkownika nazwę koloru ("red", "green", "blue", "yellow", "purple") i na jej podstawie zmienić kolor tła elementu `body`. W przypadku podania błędnej wartości kolor ma zmienić się na biały. Zastosować instrukcję `switch`.
+
+## Obsługa zdarzeń
+
+Chcąc obsłużyć dane **zdarzenie** należy odwołać się do interesującego nas elementu i dodać **nasłuch zdarzenia** za pomocą metody `addEventListener`, określając jego typ, na przykład `click`, oraz precyzując co ma się wykonać po jego wystąpieniu, podając funkcję, która ma się wtedy wykonać.
+
+```js
+function clicked () {
+
+    console.log('clicked');
+}
+
+const button = document.querySelector('button');
+
+button.addEventListener('click', clicked);
+```
+
+Przykładowe zdarzenia:
+- `click` &ndash; naciśnięcie,
+- `mouseover` &ndash; najechanie kursorem,
+- `input` &ndash; wprowadzanie danych (tylko dla elementu `input`).
+
+## Polecenia #2 - Document Object Model
+
+1. Stwórzyć licznik. Na stronie powinien znaleźć się element blokowy reprezentujący licznik i trzy przyciski odpowiedzialne odpowienio za zwiększenie, zmniejszenie oraz zresetowanie licznika. W zależności od naciśniętego przycisku, wyświetlana liczba powinna odpowiednio ulec zmianie. Kolor liczby powinien być związany z jej wartością - czerwony dla liczb ujemnych, zielony dla dodatnich, a czarny dla zera.
+2. Stworzyć formularz składający się z dwóch pól tekstowych przeznaczonych na hasła. Przy zmianie zawartości drugiego pola skrypt powinien na bierząco sprawdzać, czy jego zawrtość pokrywa się z zawartością pierwszego pola. W zależności od wyniku w elemencie liniowym pod formularzem wyświetlana jest stosowna informacja.
