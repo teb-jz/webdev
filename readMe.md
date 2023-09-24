@@ -1,30 +1,29 @@
 # Spis treści
 
-- [Spis treści](#spis-treści)
-- [Wprowadzenie](#wprowadzenie)
-  - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
-  - [Komunikaty konsoli](#komunikaty-konsoli)
-- [Zmienne](#zmienne)
-  - [Zmienne i stałe](#zmienne-i-stałe)
-  - [Typy danych](#typy-danych)
-  - [Konwersje typów](#konwersje-typów)
-- [Operatory](#operatory)
-  - [Operatory arytmetyczne](#operatory-arytmetyczne)
-  - [Dodatkowe operatory przypisania](#dodatkowe-operatory-przypisania)
-  - [Operatory relacyjne](#operatory-relacyjne)
-  - [Operatory logiczne](#operatory-logiczne)
-- [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
-- [Instrukcje warunkowe](#instrukcje-warunkowe)
-  - [Konstrukcja instrukcji warunkowej](#konstrukcja-instrukcji-warunkowej)
-  - [Złożone instrukcje warunkowe](#złożone-instrukcje-warunkowe)
-  - [Switch](#switch)
-  - [Polecenia - instrukcje warunkowe](#polecenia---instrukcje-warunkowe)
-- [Document Object Model](#document-object-model)
-  - [Pobieranie elementu](#pobieranie-elementu)
-  - [Zarządzanie własnościami elementów](#zarządzanie-własnościami-elementów)
-  - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
-  - [Obsługa zdarzeń](#obsługa-zdarzeń)
-  - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
+1. [Wprowadzenie](#wprowadzenie)
+   - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
+   - [Komunikaty konsoli](#komunikaty-konsoli)
+2. [Zmienne](#zmienne)
+   - [Zmienne i stałe](#zmienne-i-stałe)
+   - [Typy danych](#typy-danych)
+   - [Konwersje typów](#konwersje-typów)
+3. [Operatory](#operatory)
+   - [Operatory arytmetyczne](#operatory-arytmetyczne)
+   - [Dodatkowe operatory przypisania](#dodatkowe-operatory-przypisania)
+   - [Operatory relacyjne](#operatory-relacyjne)
+   - [Operatory logiczne](#operatory-logiczne)
+4. [Komunikacja z użytkownikiem](#komunikacja-z-użytkownikiem)
+5. [Instrukcje warunkowe](#instrukcje-warunkowe)
+   - [Konstrukcja instrukcji warunkowej](#konstrukcja-instrukcji-warunkowej)
+   - [Złożone instrukcje warunkowe](#złożone-instrukcje-warunkowe)
+   - [Switch](#switch)
+   - [Polecenia - instrukcje warunkowe](#polecenia---instrukcje-warunkowe)
+6. [Document Object Model](#document-object-model)
+   - [Pobieranie elementu](#pobieranie-elementu)
+   - [Zarządzanie własnościami elementów](#zarządzanie-własnościami-elementów)
+   - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
+   - [Obsługa zdarzeń](#obsługa-zdarzeń)
+   - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
 
 # Wprowadzenie
 
@@ -53,6 +52,8 @@ Na stronie można umieścić skrypt na dwa podstawowe sposoby. Wykorzystujemy w 
 </html>
 ```
 
+<p align = "right">1.1. Umieszczanie skryptu na stronie</p>
+
 W przypadku niewielkich skryptów, cały kod można umieścić pomiędzy znacznikami `<script>`.
 
 ```html
@@ -72,6 +73,8 @@ W przypadku niewielkich skryptów, cały kod można umieścić pomiędzy znaczni
 </html>
 ```
 
+<p align = "right">1.2. Importowanie skryptu</p>
+
 Zazwyczaj jednak skrypt umieszczamy w oddzielnym pliku o rozszerzeniu `js`, a następnie importujemy, podając jego ścieżkę w atrybucie `src`.
 
 > Jeżeli znacznik `<script>` posiada atrybut `src`, powinien pozostać pusty.
@@ -90,6 +93,8 @@ console.warn("Ostrzeżenie");
 console.error("Błąd");
 ```
 
+<p align = "right">1.3. Komunikaty konsoli</p>
+
 Różnią się one pomiędzy sobą wyglądem w konsoli. Przy ich pomocy można wyświetlać na przykład komunikaty, czy wartości poszczególnych **zmiennych**.
 
 # Zmienne
@@ -102,11 +107,15 @@ Zmienna to pewne wydzielone miejsce w pamięci komputera, gdzie mogą być przec
 let zmienna;
 ```
 
+<p align = "right">2.1. Deklaracja zmiennej</p>
+
 Przy **deklarowaniu** zmiennej korzystamy ze słowa kluczowego `let`.
 
 ```js
 const stala = 3.14;
 ```
+
+<p align = "right">2.2. Deklaracja stałej</p>
 
 W przypadku stałej, wymaganym słowem kluczowym jest `const`. Wartości stałej nie jesteśmy już w stanie zmienić po jej utworzeniu, zatem musimy od razu ją **zainicjalizować**, korzystając ze znaku przypisania `=`.
 
@@ -115,6 +124,8 @@ let x = 9;
 
 x = 11;
 ```
+
+<p align = "right">2.3. Nadpisywanie zmiennej</p>
 
 Po zadeklarowaniu zmiennej lub stałej, przy kolejnych odołaniach pomijamy słowa kluczowe.
 
@@ -139,6 +150,8 @@ Wartości można **konwertować** pomiędzy poszczególnymi typami, dzięki temu
 const number = 2.13;
 const integer = parseInt(number);
 ```
+
+<p align = "right">2.4. Konwersja na inny typ</p>
 
 # Operatory
 
@@ -212,17 +225,23 @@ Najprostszym i najbardziej prymitywnym sposobem komunikacji z użytkownikiem są
 window.alert("Informacja");
 ```
 
+<p align = "right">4.1. Alert popup</p>
+
 Metoda `alert` wyświetla informację.
 
 ```js
 const value = window.confirm("Potwierdzenie");
 ```
 
+<p align = "right">4.2. Confirm popup</p>
+
 `confirm` wyświetla tekst, oczekując wybrania jednego z dwóch przycisków. Metoda zwraca wartość logiczną w zależności od wyboru, którą można przypisać na przykład do zmiennej i wykorzystać na dalszym etapie.
 
 ```js
 const value = window.prompt("Pytanie");
 ```
+
+<p align = "right">4.3. Prompt popup</p>
 
 Metoda `prompt` wyświetla tekst, oczekując wprowadzenie tekstu, po wciśnięciu przycisku wartość jest zwracana.
 
@@ -245,6 +264,8 @@ if (condition) {
 }
 ```
 
+<p align = "right">5.1. Instrukcja warunkowa</p>
+
 Po słowie kluczowym `if`, wewnątrz nawiasów okrągłych, następuje warunek. Blok kodu, czyli wszystkie instrukcje, które mają zostać wykonane w obrębie instrukcji warunkowej (mają zostać wykonane pod warunkiem), wyznaczają nawiasy klamrowe. Warunkiem może być zmienna lub całe wyrażenie.
 
 > W powyższym przykładzie sprawdzana jest wartość zmiennej condition. Została ona zainicjowana wartością `true` - wartość jest prawdą, co jest równoznaczne ze spełnieniem warunku.
@@ -253,6 +274,8 @@ Po słowie kluczowym `if`, wewnątrz nawiasów okrągłych, następuje warunek. 
 if (condition)
     console.log("Warunek jest spełniony");
 ```
+
+<p align = "right">5.2. Jednolinijkowa instrukcja warunkowa</p>
 
 W przypadku pojedynczej linii kodu, można pominąć nawiasy klamrowe.
 
@@ -272,6 +295,8 @@ else if (number < 0)
 else
     console.log("Liczba jest równa 0.")
 ```
+
+<p align = "right">5.3. Konstrukcja instrukcji warunkowej</p>
 
 ## Switch
 
@@ -298,6 +323,8 @@ switch (key) {
         break;
 }
 ```
+
+<p align = "right">5.4. Instrukcja switch</p>
 
 Po słowie kluczowym `switch` wskazujemy zmienną, której wartość zadecyduje o przeprowadzonych operacjach. W zależności od jej wartości wybierany jest odpowiedni przypadek - `case`. Na końcu umieszczamy przypadek domyślny - `default`. Każdy przypadek kończymy instrukcją `break`.
 
@@ -330,6 +357,8 @@ Do odniesienia się do pojedynczych elementów można wykorzystać metody obiekt
 </script>
 ```
 
+<p align = "right">6.1. Odwołania do elementu</p>
+
 W przypadku zbioru elementów:
 - `querySelectorAll` &ndash; jak wyżej, selektor `css`,
 - `getElementsByClassName` &ndash; parametrem jest nazwa **klasy** elementów.
@@ -346,6 +375,8 @@ W przypadku zbioru elementów:
     console.log(e2);
 </script>
 ```
+
+<p align = "right">6.2. Odwołania do wielu elementów</p>
 
 ## Zarządzanie własnościami elementów
 
@@ -366,6 +397,8 @@ Metoda `innerText` pozwala na zmianę lub pobranie tekstu znajdującego się w d
 </script>
 ```
 
+<p align = "right">6.3. Zmiana zawartości elementu</p>
+
 Innym przydatnym polem jest `classList`. Pozwala ono na zarządzanie klasami elementu. Posiada metody takie jak `add`, `remove` i `toggle`.
 
 ```html
@@ -378,6 +411,8 @@ Innym przydatnym polem jest `classList`. Pozwala ono na zarządzanie klasami ele
 </script>
 ```
 
+<p align = "right">6.4. Zarządzanie klasą elementu</p>
+
 Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywania klas.
 
 ```html
@@ -389,6 +424,8 @@ Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywani
     element.style.backgroundColor = "grey";
 </script>
 ```
+
+<p align = "right">6.5. Zmaiana styli elementu</p>
 
 ## Polecenia #1 - Document Object Model
 
@@ -410,6 +447,8 @@ const button = document.querySelector('button');
 
 button.addEventListener('click', clicked);
 ```
+
+<p align = "right">6.6. Dodawanie nasłuchu zdarzenia</p>
 
 Przykładowe zdarzenia:
 - `click` &ndash; naciśnięcie,
