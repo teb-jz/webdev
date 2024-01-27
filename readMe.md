@@ -1,4 +1,4 @@
-# Spis treści
+# Spis treści<!-- omit in toc -->
 
 1. [Wprowadzenie](#wprowadzenie)
    - [Umieszczanie skryptu na stronie](#umieszczanie-skryptu-na-stronie)
@@ -24,6 +24,10 @@
    - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
    - [Obsługa zdarzeń](#obsługa-zdarzeń)
    - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
+7. [React](#react)
+   - [Instalacja](#instalacja)
+   - [Tworzenie projektu](#tworzenie-projektu)
+   - [Struktura projektu](#struktura-projektu)
 
 # Wprowadzenie
 
@@ -459,3 +463,87 @@ Przykładowe zdarzenia:
 
 1. Stwórzyć licznik. Na stronie powinien znaleźć się element blokowy reprezentujący licznik i trzy przyciski odpowiedzialne odpowienio za zwiększenie, zmniejszenie oraz zresetowanie licznika. W zależności od naciśniętego przycisku, wyświetlana liczba powinna odpowiednio ulec zmianie. Kolor liczby powinien być związany z jej wartością - czerwony dla liczb ujemnych, zielony dla dodatnich, a czarny dla zera.
 2. Stworzyć formularz składający się z dwóch pól tekstowych przeznaczonych na hasła. Przy zmianie zawartości drugiego pola skrypt powinien na bierząco sprawdzać, czy jego zawrtość pokrywa się z zawartością pierwszego pola. W zależności od wyniku w elemencie liniowym pod formularzem wyświetlana jest stosowna informacja.
+
+# React
+
+**React.js**, framework JavaScript stworzony przez firmę Facebook. Jest wykorzystywany do budowy interaktywnych interfejsów użytkownika w aplikacjach internetowych.
+
+React opiera się na koncepcji *komponentów*, czyli samodzielnych, hermetycznych części interfejsu użytkownika. Komponenty mogą zawierać logikę, widoki i style, co ułatwia organizację kodu.
+
+## Instalacja
+
+Do korzystania z Reacta wymagane są dwa główne narzędzia - **Node.js** i **npm** (*Node Package Manager*). Node.js pozwala uruchamiać JavaScript poza przeglądarką, a npm umożliwia instalację i zarządzanie pakietami, w tym React.
+
+Instalator Node można pobrać z [oficialnej strony](https://nodejs.org/en). Zawiera on również npm.
+
+## Tworzenie projektu
+
+Do stworzenie podstawowego projektu można posłużyć się narzędziem `vite` dostępnym w npm, korzystając z komendy `npm create vite`.
+
+![create](./1.png)
+
+Następnie należy postępować zgodnie z kolejnymi instrukcjami.
+
+![run](./2.png)
+
+Polecenie `npm run dev` odpowiada za uruchomienie aplikacji. Aby ją wyświetlić wystarczy kliknąć w link wyświetlony w konsoli lub uruchomić przeglądarkę i przejść do `localhost` z odpowienim portem.
+
+## Struktura projektu
+
+![project](./3.png)
+
+Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `vile`. Kluczowe elementy to:
+- `node_modules` - katalog, w którym przechowywane są wszystkie zależności projektu,
+- `public` - katalog zawierający pliki statyczne, takie jak pliki HTML, ikony, czy grafiki,
+- `src` - katalog zawierający kod źródłowy projektu. Tutaj znajdują się komponenty, testy i inne pliki związane z logiką aplikacji,
+- `App.jsx` - główny komponent aplikacji, który może zawierać inne komponenty.
+- `main.jsx` - plik startowy, w którym następuje montowanie głównego komponentu.
+- `index.html` - główny plik HTML. Jest punktem wejścia dla aplikacji React.
+
+## Podstawowa aplikacja
+
+Przy tworzeniu podstawowej aplikacji React skupimy się na trzech głównych plikach.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+```
+
+<p align = "right">7.1. index.html</p>
+
+```jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+
+ReactDOM.createRoot(document.querySelector('main'))
+    .render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>,
+    )
+```
+
+<p align = "right">7.2. main.jsx</p>
+
+```jsx
+export default function App () {
+
+    return (
+        <div>
+            <h1>Lorem ipsum</h1>
+        </div>
+    )
+}
+```
+
+<p align = "right">7.3. App.jsx</p>
