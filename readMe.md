@@ -28,6 +28,8 @@
    - [Instalacja](#instalacja)
    - [Tworzenie projektu](#tworzenie-projektu)
    - [Struktura projektu](#struktura-projektu)
+   - [Propsy](#propsy)
+   - [UseState](#usestate)
 
 # Wprowadzenie
 
@@ -492,7 +494,7 @@ Polecenie `npm run dev` odpowiada za uruchomienie aplikacji. Aby ją wyświetli�
 
 ![project](./3.png)
 
-Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `vile`. Kluczowe elementy to:
+Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `vite`. Kluczowe elementy to:
 - `node_modules` - katalog, w którym przechowywane są wszystkie zależności projektu,
 - `public` - katalog zawierający pliki statyczne, takie jak pliki HTML, ikony, czy grafiki,
 - `src` - katalog zawierający kod źródłowy projektu. Tutaj znajdują się komponenty, testy i inne pliki związane z logiką aplikacji,
@@ -547,3 +549,46 @@ export default function App () {
 ```
 
 <p align = "right">7.3. App.jsx</p>
+
+## Propsy
+
+Propsy to argumenty przekazywane do komponentu. Ich wartość można wykorzystać podczas renderowania.
+
+```jsx
+export default function Section ({ text }) {
+
+    return (
+        <div>
+            <p>{ text }</p>
+        </div>
+    );
+}
+```
+
+```html
+<Section text = "Sample text" />
+```
+
+<p align = "right">7.4. Propsy</p>
+
+## UseState
+
+Do zarządzania stanem komponentu możemy skorzystać z funkcji `useState`. Oferuje zmienną przechowującą stan oraz funkcjię odpowiadającą za jego ustawienie.
+
+```jsx
+import { useState } from "react";
+
+export default function Button () {
+
+    const [state, setState] = useState(0);
+
+    function clicked () {
+
+        setState(state + 1);
+    }
+
+    return <button type = "button" onClick = {clicked}>{ state }</button>;
+}
+```
+
+<p align = "right">7.5. UseState</p>
