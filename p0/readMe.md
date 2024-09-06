@@ -58,7 +58,7 @@ Style pozwalające na odpowiednie ułożenie danych elementów należy dobrać s
 
 ### Oczekiwany wygląd witryny
 
-![Strona](web.png)
+![Strona](web1.png)
 
 ## Działanie
 
