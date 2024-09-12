@@ -1,5 +1,5 @@
 
-# Galeria zdjęć
+# Kalendarz
 
 Stworzyć stronę internetową wyświetlającą kalendarz na bieżący miesiąc.
 
