@@ -13,6 +13,6 @@ Stworzyć stronę internetową wyświetlającą kalendarz na bieżący miesiąc.
 
 * Naciśnięcie roku umożliwia jego edycję.
 
-* Po wybraniu danej daty pojawia się możliwość dodania notatki o wybranym kolorze i zawartości. Dane powinny zostać zapisane w przeglądarce przy pomocy `localStorage`.
+* Po wybraniu danej daty pojawia się możliwość dodania notatki o wybranym kolorze i zawartości. Notatka jest widoczna na kafelku danej daty. Dane powinny zostać zapisane w przeglądarce przy pomocy `localStorage`.
 
 * Po wybraniu notatki możliwe jest jej usunięcie oraz edycja.
