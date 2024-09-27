@@ -32,3 +32,9 @@
 ### Oczekiwany wygląd witryny
 
 ![Strona](web.png)
+
+## Działanie
+
+Po naciśnięciu na dany cytat zostaje on wyróżniony na środku witryny. Przycisk umożliwia opuszczenie widoku.
+
+![Strona](web1.png)
