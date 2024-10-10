@@ -24,14 +24,9 @@
    - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
    - [Obsługa zdarzeń](#obsługa-zdarzeń)
    - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
-7. [React](#react)
-   - [Instalacja](#instalacja)
-   - [Tworzenie projektu](#tworzenie-projektu)
-   - [Struktura projektu](#struktura-projektu)
-   - [Propsy](#propsy)
-   - [UseState](#usestate)
 
-# Wprowadzenie
+<a name = "wprowadzenie"></a>
+# 1. Wprowadzenie
 
 **JavaScript** to **hybrydowy język programowania** wykorzystywany między innymi na stronach internetowych.
 
@@ -103,7 +98,8 @@ console.error("Błąd");
 
 Różnią się one pomiędzy sobą wyglądem w konsoli. Przy ich pomocy można wyświetlać na przykład komunikaty, czy wartości poszczególnych **zmiennych**.
 
-# Zmienne
+<a name = "zmienne"></a>
+# 2. Zmienne
 
 Zmienna to pewne wydzielone miejsce w pamięci komputera, gdzie mogą być przechowywane dane. Wartością zmiennej może być na przykład liczba lub ciąg znaków. Zmienna musi posiadać nazwę symboliczną, przez którą można odwoływać się do niej w kodzie.
 
@@ -159,7 +155,8 @@ const integer = parseInt(number);
 
 <p align = "right">2.4. Konwersja na inny typ</p>
 
-# Operatory
+<a name = "operatory"></a>
+# 3. Operatory
 
 **JavaScript** podobnie jak inne języki oferuje szereg różnych operatorów, dzięki którym możemy operować na wartościach.
 
@@ -223,7 +220,8 @@ Operatory logiczne używa się do konstruowania warunków złożonych.
 |`\|\|`|Alternatywa (lub, *or*)|`b === −2 \|\| b === 2`|
 |`!`|Negacja (*not*)|`!b`|
 
-# Komunikacja z użytkownikiem
+<a name = "komunikacja-z-uzytkownikiem"></a>
+# 4. Komunikacja z użytkownikiem
 
 Najprostszym i najbardziej prymitywnym sposobem komunikacji z użytkownikiem są okna dialogowe. Wyróżniamy kilka podstawowych metod:
 
@@ -253,7 +251,8 @@ Metoda `prompt` wyświetla tekst, oczekując wprowadzenie tekstu, po wciśnięci
 
 > Każda wartość wprowadzona przez użytkownika poprzez klawiaturę jest interpretowana jako ciąg znaków. Jeżeli oczekujemy innej interpretacji należy zastosować zmianę typu.
 
-# Instrukcje warunkowe
+<a name = "instrukcje-warunkowe"></a>
+# 5. Instrukcje warunkowe
 
 Instrukcje warunkowe w programowaniu służą do warunkowego wykonywania instrukcji, w zależności od tego, czy dany warunek jest spełniony.
 
@@ -341,7 +340,8 @@ Po słowie kluczowym `switch` wskazujemy zmienną, której wartość zadecyduje 
 3. Zadeklarować dwie **stałe** i zainicjalizować je wartościmi pobranymi od użytkownika (`prompt`), a następnie wyświetlić ich średnią arytmetyczną (`alert`).
 4. Wykorzystując instrukcję `switch`, napisać kalkulator prosty. Skrypt, przy pomocy `prompt`, powinien pobierać trzy wartości od użytkownika. Pierwsza i trzecia będą liczbami – argumentami wybranego działania matematycznego. Druga wartość będzie określała znak operacji (`+`, `-`, `*` lub `/`). Na koniec wyświetlić w informacyjnym oknie dialogowym (`alert`) wynik wybranej operacji.
 
-# Document Object Model
+<a name = "document-object-model"></a>
+# 6. Document Object Model
 
 Sposób reprezentacji struktury dokumentu w formie drzewa. Metody **DOM** pozwalają na interakcję z dokumentem, zmianę struktury, stylu czy zawartości.
 
@@ -433,6 +433,34 @@ Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywani
 
 <p align = "right">6.5. Zmaiana styli elementu</p>
 
+Istotnym polem jest również `value`, które pozwala na zarządzanie wartością *pola wprowadzania*. Można skorzystać z niego również podczas odczytywania wartości wprowadzonej przez użytkownika.
+
+```html
+<input type = "text">
+
+<script>
+    const element = document.querySelector("input");
+
+    element.value = "Text";
+</script>
+```
+
+<p align = "right">6.6. Wartość elementu</p>
+
+W przypadku *przycisku wyboru* dostajemy do dyspozycji pole `checked`, odpowiadające za zaznaczenie danej opcji.
+
+```html
+<input type = "checkbox">
+
+<script>
+    const element = document.querySelector("input");
+
+    element.checked = true;
+</script>
+```
+
+<p align = "right">6.7. Zaznaczenie elementu</p>
+
 ## Polecenia #1 - Document Object Model
 
 1. Przy pomocy okna dialogowego `prompt` pobrać od użytkownika przykładowy tekst i umieścić go na stronie w stworzonym elemencie liniowym `span`. Skorzystać z pola `innerHTML`.
@@ -441,7 +469,7 @@ Czasami będziemy chcieli nadać jakieś style bezpośrednio, bez wykorzystywani
 
 ## Obsługa zdarzeń
 
-Chcąc obsłużyć dane **zdarzenie** należy odwołać się do interesującego nas elementu i dodać **nasłuch zdarzenia** za pomocą metody `addEventListener`, określając jego typ, na przykład `click`, oraz precyzując co ma się wykonać po jego wystąpieniu, podając funkcję, która ma się wtedy wykonać.
+Chcąc obsłużyć dane **zdarzenie** należy odwołać się do interesującego nas elementu i dodać **nasłuch zdarzenia** za pomocą metody `addEventListener`, określając jego typ, na przykład `click`, oraz precyzując co ma się stać po jego wystąpieniu, podając funkcję, która ma się wtedy wykonać.
 
 ```js
 function clicked () {
@@ -465,130 +493,3 @@ Przykładowe zdarzenia:
 
 1. Stwórzyć licznik. Na stronie powinien znaleźć się element blokowy reprezentujący licznik i trzy przyciski odpowiedzialne odpowienio za zwiększenie, zmniejszenie oraz zresetowanie licznika. W zależności od naciśniętego przycisku, wyświetlana liczba powinna odpowiednio ulec zmianie. Kolor liczby powinien być związany z jej wartością - czerwony dla liczb ujemnych, zielony dla dodatnich, a czarny dla zera.
 2. Stworzyć formularz składający się z dwóch pól tekstowych przeznaczonych na hasła. Przy zmianie zawartości drugiego pola skrypt powinien na bierząco sprawdzać, czy jego zawrtość pokrywa się z zawartością pierwszego pola. W zależności od wyniku w elemencie liniowym pod formularzem wyświetlana jest stosowna informacja.
-
-# React
-
-**React.js**, framework JavaScript stworzony przez firmę Facebook. Jest wykorzystywany do budowy interaktywnych interfejsów użytkownika w aplikacjach internetowych.
-
-React opiera się na koncepcji *komponentów*, czyli samodzielnych, hermetycznych części interfejsu użytkownika. Komponenty mogą zawierać logikę, widoki i style, co ułatwia organizację kodu.
-
-## Instalacja
-
-Do korzystania z Reacta wymagane są dwa główne narzędzia - **Node.js** i **npm** (*Node Package Manager*). Node.js pozwala uruchamiać JavaScript poza przeglądarką, a npm umożliwia instalację i zarządzanie pakietami, w tym React.
-
-Instalator Node można pobrać z [oficialnej strony](https://nodejs.org/en). Zawiera on również npm.
-
-## Tworzenie projektu
-
-Do stworzenie podstawowego projektu można posłużyć się narzędziem `vite` dostępnym w npm, korzystając z komendy `npm create vite`.
-
-![create](./1.png)
-
-Następnie należy postępować zgodnie z kolejnymi instrukcjami.
-
-![run](./2.png)
-
-Polecenie `npm run dev` odpowiada za uruchomienie aplikacji. Aby ją wyświetlić wystarczy kliknąć w link wyświetlony w konsoli lub uruchomić przeglądarkę i przejść do `localhost` z odpowienim portem.
-
-## Struktura projektu
-
-![project](./3.png)
-
-Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `vite`. Kluczowe elementy to:
-- `node_modules` - katalog, w którym przechowywane są wszystkie zależności projektu,
-- `public` - katalog zawierający pliki statyczne, takie jak pliki HTML, ikony, czy grafiki,
-- `src` - katalog zawierający kod źródłowy projektu. Tutaj znajdują się komponenty, testy i inne pliki związane z logiką aplikacji,
-- `App.jsx` - główny komponent aplikacji, który może zawierać inne komponenty.
-- `main.jsx` - plik startowy, w którym następuje montowanie głównego komponentu.
-- `index.html` - główny plik HTML. Jest punktem wejścia dla aplikacji React.
-
-## Podstawowa aplikacja
-
-Przy tworzeniu podstawowej aplikacji React skupimy się na trzech głównych plikach.
-
-```html
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    <main></main>
-    <script type="module" src="/src/main.jsx"></script>
-</body>
-</html>
-```
-
-<p align = "right">7.1. index.html</p>
-
-```jsx
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-
-ReactDOM.createRoot(document.querySelector('main'))
-    .render(
-        <React.StrictMode>
-            <App />
-        </React.StrictMode>,
-    )
-```
-
-<p align = "right">7.2. main.jsx</p>
-
-```jsx
-export default function App () {
-
-    return (
-        <div>
-            <h1>Lorem ipsum</h1>
-        </div>
-    )
-}
-```
-
-<p align = "right">7.3. App.jsx</p>
-
-## Propsy
-
-Propsy to argumenty przekazywane do komponentu. Ich wartość można wykorzystać podczas renderowania.
-
-```jsx
-export default function Section ({ text }) {
-
-    return (
-        <div>
-            <p>{ text }</p>
-        </div>
-    );
-}
-```
-
-```html
-<Section text = "Sample text" />
-```
-
-<p align = "right">7.4. Propsy</p>
-
-## UseState
-
-Do zarządzania stanem komponentu możemy skorzystać z funkcji `useState`. Oferuje zmienną przechowującą stan oraz funkcjię odpowiadającą za jego ustawienie.
-
-```jsx
-import { useState } from "react";
-
-export default function Button () {
-
-    const [state, setState] = useState(0);
-
-    function clicked () {
-
-        setState(state + 1);
-    }
-
-    return <button type = "button" onClick = {clicked}>{ state }</button>;
-}
-```
-
-<p align = "right">7.5. UseState</p>
