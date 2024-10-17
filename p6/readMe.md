@@ -3,28 +3,38 @@
 
 ## Zawartość
 * Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
-* Zadeklarowany język zawartości witryny - **angielski**.
-* Tytuł strony widoczny na karcie przeglądarki - **Page**.
-* Prawidłowo połączony zewnętrzny arkusz stylów.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Strona**.
 * Witryna jest podzielona na *semantyczne elementy blokowe*.
 
 ## Wygląd
 
 * Strona powinna w jak największym stopniu przypominać załączoną grafikę.
-* Style zdefiniowane w oddzielnym pliku CSS o nazwie **index** i odpowiednim rozszerzeniu.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie **main** i odpowiednim rozszerzeniu.
 * Zastosowane kolory:
-  * Kolor nagłówka i stopki: `#604D53`
-  * Kolor nawigacji i bloku cytatu: `#DB7F8E`
-  * Kolor prawego panelu: `#FFDBDA`
-  * Kolor artykułu: `#D5C5C8`
-  * Jasny kolor czcionki: `#FDFDFF`
-  * Kolor obramowań: `#444F5A`
+  * belka górna - 1a659e<sub>16</sub>,
+  * formularz: f7c59f<sub>16</sub>,
+  * artykuł - efefd0<sub>16</sub>,
+  * jasna czcionka - cbeef3<sub>16</sub>,
+  * ciemna czcionka - 0a0908<sub>16</sub>.
 * Krój czcionki: **Trebuchet MS**.
 * Należy zadbać o podstawową responsywność.
-* Po najechaniu na bloczki znajdujące się po prawej stronie witryny zostają wypełnione kolorem `#DB7F8E`, a kolor czcionki zmienia się na `#FDFDFF`. Animacje przejścia mają być płynne.
+* Przycisk ma nieznacznie zwiększać swoje wymiary po najechaniu na niego kursorem.
+* Wielkość tekstu linków ma się delikatnie zwiększyć po najechaniu na nie kursorem.
 
 ---
 
 ### Oczekiwany wygląd witryny
 
-![Strona](web.png)
+![Strona](web1.png)
+
+## Działanie
+
+* Skrypt napisany w oddzielnym pliku o nazwie **script** i odpowiednim rozszerzeniu.
+* Po kliknięciu przycisku ma nastąpić sprawdzenie pól pod kątem poprawności, pod formularzem wyświetlany jest odpowiedni komunikat. Kryteria:
+  * wszystkie pola są wypełnione,
+  * hasło ma minimum osiem znaków,
+  * hasła się zgadzają.
+* W przypadku poprawnie wypełnionego formularza komunikat jest zielony, a w przypadku niepoprawnie wypełnionego - czerwony.
+
+![Strona](web2.png)
