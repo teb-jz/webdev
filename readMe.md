@@ -24,7 +24,11 @@
    - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
    - [Obsługa zdarzeń](#obsługa-zdarzeń)
    - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
-7. [PHP]()
+7. [PHP](#php)
+   - [Wprowadzenie](#wprowadzenie)
+   - [Tablice](#tablice)
+   - [Funkcje](#funkcje)
+   - [Polecenia](#polecenia)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
