@@ -24,6 +24,7 @@
    - [Polecenia #1 - Document Object Model](#polecenia-1---document-object-model)
    - [Obsługa zdarzeń](#obsługa-zdarzeń)
    - [Polecenia #2 - Document Object Model](#polecenia-2---document-object-model)
+7. [PHP]()
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -493,3 +494,232 @@ Przykładowe zdarzenia:
 
 1. Stwórzyć licznik. Na stronie powinien znaleźć się element blokowy reprezentujący licznik i trzy przyciski odpowiedzialne odpowienio za zwiększenie, zmniejszenie oraz zresetowanie licznika. W zależności od naciśniętego przycisku, wyświetlana liczba powinna odpowiednio ulec zmianie. Kolor liczby powinien być związany z jej wartością - czerwony dla liczb ujemnych, zielony dla dodatnich, a czarny dla zera.
 2. Stworzyć formularz składający się z dwóch pól tekstowych przeznaczonych na hasła. Przy zmianie zawartości drugiego pola skrypt powinien na bierząco sprawdzać, czy jego zawrtość pokrywa się z zawartością pierwszego pola. W zależności od wyniku w elemencie liniowym pod formularzem wyświetlana jest stosowna informacja.
+
+
+<a name = "php"></a>
+# 7. PHP
+
+PHP jest językiem skryptowym, który jest szeroko stosowany w tworzeniu stron internetowych oraz aplikacji webowych. Jego popularność wynika z tego, że jest łatwy do nauki i ma wiele wbudowanych funkcji i bibliotek.
+
+## Wprowadzenie
+
+PHP jest językiem programowania interpretowanym, co oznacza, że kod jest wykonywany w momencie jego interpretacji.
+
+### Składnia
+
+```PHP
+<?php
+
+echo "Hello world!";
+
+?>
+```
+
+<p align = "right">7.1. Tagi PHP</p>
+
+Kod PHP umieszczamy pomiędzy tagami `<?php ?>`, a poszczególne linie kończymy średnikiem.
+
+### Zmienne
+
+Zmienne deklarujemy przy pomocy znaku `$`. Podobnie jak w języku JavaScript nie podajemy typu zmiennej.
+
+```PHP
+<?php
+
+$name = "Johannes";
+
+echo "My name is " . $name . ".";
+
+?>
+```
+
+<p align = "right">7.2. Zmienne w PHP</p>
+
+Za konkatenację w języku PHP odpowiada `.`.
+
+### Instrukcje warunkowe
+
+Instrukcje warunkowe deklarujemy przy pomocy słów kluczowych `if`, `elseif` oraz `else`.
+
+```PHP
+<?php
+
+$x = 21;
+
+if (0 < $x && $x < 10) {
+
+    echo "Podana liczba jest jednocyfrowa.";
+}
+
+elseif (9 < $x && $x < 100) {
+
+	echo "Podana liczba jest dwucyfrowa.";
+}
+
+else {
+
+    echo "Podana liczba jest trochę większa.";
+}
+
+?>
+```
+
+<p align = "right">7.4. Instrukcje warunkowe</p>
+
+Warunki złożone możemy konstruować z pomocą operatorów logicznych `&&` oraz `||`.
+
+### Pętle
+
+W celu zwielokrotnienia danych instrukcji możemy wykorzystać pętle. Język PHP oferuje dwa standardowe rodzaje pętli:
+
+```PHP
+<?php
+
+for ($i = 1; $i < 6; $i++) {
+
+    echo $i . " ";
+}
+
+?>
+```
+
+<p align = "right">7.5. Pętla For</p>
+
+Pętla `for` opiera się na *iteratorze* - zmiennej liczbowej, której wartość jest zmieniana w trakcie wykonywania pętli - w kolejnych *iteracjach*.
+
+```PHP
+<?php
+
+$x = 5;
+
+while ($x > 0) {
+
+    echo $x . " ";
+
+    $x--;
+}
+
+?>
+```
+
+<p align = "right">7.6. Pętla While</p>
+
+W przypadku pętli `while`, instrukcje wykonywane są dopóki warunek zawarty w nawiasach pozostaje spełniony.
+
+## Tablice
+
+Jedna z podstawowych struktur danych, będąca uporządkowanym zbiorem pewnych elementów. Każdemu z nich przypisany jest unikatowy klucz - *indeks*.
+
+```PHP
+<?php
+
+$x = [1, 2, 3];
+$y = ["a", "b", "c"];
+
+echo $y[1] . $x[0];
+
+?>
+```
+
+<p align = "right">7.7. Tablice</p>
+
+Tablice inicjujemy przy pomocy nawiasów kwadratowych. Do poszczególnych elementów odwołujemy się za ich pomocą, podając odpowiedni indeks.
+
+> Elementy tablic indeksowane są od zera.
+
+### Tablice asocjacyjne
+
+Ten typ tablic pozwala na przypisanie elementom indeksów tekstowych.
+
+```PHP
+<?php
+
+$liczby = array(
+
+    "a" => 2,
+    "b" => 1,
+    "c" => 3
+);
+
+echo $liczby["b"];
+
+?>
+```
+
+<p align = "right">7.8. Tablice asocjacyjne</p>
+
+### Iterowanie po tablicach
+
+W celu wygodnego odwoływania się do elementów tablic możemy skorzystać z pętli.
+
+```PHP
+<?php
+
+$owoce = ["mango", "gruszka", "jabłko"];
+
+for ($i = 0; $i < count($owoce); $i++) {
+
+    echo $owoce[$i] . " ";
+}
+
+echo "<br>";
+
+$wspolczynniki = array(
+
+    "a" => 1,
+    "b" => -3,
+    "c" => 7,
+);
+
+foreach ($wspolczynniki as $klucz => $wartosc) {
+
+    echo $klucz . ': ' . $wartosc;
+}
+
+?>
+```
+
+<p align = "right">7.9. Iterowanie po tablicach</p>
+
+W przypadku tablic asocjacyjnych należy skorzystać z pętli `foreach`.
+
+> Jak widać na powyższym przykładzie język PHP pozwala na proste wstawiane elementów HTML przy pomocy `echo`.
+
+## Funkcje
+
+Funkcje stosujemy, gdy chcemy wielokrotnie korzystać z danego, wydzielonego bloku kodu.
+
+```PHP
+<?php
+
+function podwoj ($x) {
+
+    $wynik = $x * 2;
+
+    return $wynik;
+}
+
+$a = 7;
+$b = podwoj($a);
+
+echo "Dwukrotność liczby " . $a . " wynosi " . $b . ".";
+
+?>
+```
+
+<p align = "right">7.10. Funkcje</p>
+
+## Polecenia
+
+1. Przy pomocy pętli `for` wyświetl liczby z zakresu *[-10; 20]*.
+2. Przy pomocy pętli `while` wyświetl liczby z zakresu *(-100; 10)*.
+3. Przy pomocy pętli wyświetl liczby naturalne mniejsze niż *100*.
+4. Przy pomocy pętli wyświetl liczby nieparzyste z zakresu *(-5; 13]*.
+5. Przy pomocy pętli wyświetl wielokrotności liczby *7* mniejsze niż *1000*.
+6. Napisz cztery funkcje dwuargumentowe odpowiadające podstawowym operacjom arytmetycznym. Przetestuj funkcje na przykładowych danych.
+7. Napisz funkcję wyświetlającą wybraną potęgę danej liczby. Przetestuj funkcję na przykładowych danych.
+8. Napisz funkcję przyjmującą ciąg znaków i zwracającą jego długość. Przetestuj funkcję na przykładowych danych.
+9. Napisz funkcję przyjmującą ciąg znaków i zwracającą jego odwrotność. Przetestuj funkcję na przykładowych danych.
+10. Napisz funkcję sprawdzającą czy podany ciąg znaków jest palindromem. Przetestuj funkcję na przykładowych danych.
+11. Napisz funkcję przyjmującą tablicę liczb i zwracającą ich średnią arytmetyczną.
+12. Napisz funkcję przyjmującą trzy wartości liczbowe będące współczynnikami równania kwadratowego. Funkcja ma za zadanie wyświetlić to równanie i podać jego rozwiązania. Przetestuj funkcję na przykładowych danych.
