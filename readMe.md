@@ -28,7 +28,9 @@
    - [Wprowadzenie](#wprowadzenie)
    - [Tablice](#tablice)
    - [Funkcje](#funkcje)
-   - [Polecenia](#polecenia)
+   - [Polecenia - podstawy](#polecenia---podstawy)
+   - [Formularze](#formularze)
+   - [Polecenia - formularze](#polecenia---formularze)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -713,7 +715,7 @@ echo "Dwukrotność liczby " . $a . " wynosi " . $b . ".";
 
 <p align = "right">7.10. Funkcje</p>
 
-## Polecenia
+## Polecenia - podstawy
 
 1. Przy pomocy pętli `for` wyświetl liczby z zakresu *[-10; 20]*.
 2. Przy pomocy pętli `while` wyświetl liczby z zakresu *(-100; 10)*.
@@ -727,3 +729,113 @@ echo "Dwukrotność liczby " . $a . " wynosi " . $b . ".";
 10. Napisz funkcję sprawdzającą czy podany ciąg znaków jest palindromem. Przetestuj funkcję na przykładowych danych.
 11. Napisz funkcję przyjmującą tablicę liczb i zwracającą ich średnią arytmetyczną.
 12. Napisz funkcję przyjmującą trzy wartości liczbowe będące współczynnikami równania kwadratowego. Funkcja ma za zadanie wyświetlić to równanie i podać jego rozwiązania. Przetestuj funkcję na przykładowych danych.
+
+## Formularze
+
+Formularze są kluczowym elementem interaktywnych stron internetowych. Dzięki nim użytkownicy mogą przesyłać dane do serwera, które *PHP* przetwarza i wykorzystuje do generowania dynamicznych treści lub przeprowadzania różnych operacji.
+
+### Formularze w HTML
+
+Poniżej znajduje się przykład prostego formularza *HTML*, który wysyła dane metodą **POST**:
+
+```html
+
+<form action = "process.php" method = "POST">
+    <label for = "username">Nazwa użytkownika:</label>
+    <input type = "text" id = "username" name = "username">
+
+    <label for = "password">Hasło:</label>
+    <input type = "password" id = "password" name = "password">
+
+    <button type = "submit">Zaloguj</button>
+</form>
+
+```
+
+<p align = "right">7.11. Formularz w HTML</p>
+
+Formularz wysyła dane do pliku process.php przy pomocy metody **POST**.
+
+### Obsługa danych formularza w PHP
+
+W PHP możemy odczytać dane przesłane przez użytkownika za pomocą *superglobalnych* tablic `$_POST` lub `$_GET`, w zależności od zastosowanej metody:
+
+```php
+
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    echo "Nazwa użytkownika: " . $username . "<br>";
+}
+
+?>
+
+```
+
+<p align = "right">7.12. Obsługa danych formularza</p>
+
+> *Superglobalna* tablica `$_POST` przechowuje dane przesłane metodą **POST**, a `$_GET` metodą **GET**.
+
+### Walidacja danych
+
+Aby zapewnić poprawność wprowadzanych danych, zaleca się ich walidację po stronie serwera.
+
+```php
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $username = $_POST["username"];
+    $password = $_POST["password"];
+
+    if (empty($username))
+        echo "Nazwa użytkownika jest wymagana.<br>";
+    
+    elseif (empty($password))
+        echo "Hasło jest wymagane.<br>";
+
+    else
+        echo "Dane są poprawne!<br>";
+}
+
+?>
+```
+
+<p align = "right">7.13. Walidacja danych</p>
+
+> Zaleca się, aby oprócz walidacji po stronie serwera, dane były również weryfikowane po stronie klienta za pomocą *JavaScript*.
+
+
+Po pomyślnym przesłaniu danych można przekierować użytkownika na inną stronę:
+
+```php
+<?php
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($username)) {
+
+    header("Location: success.html");
+    exit();
+}
+
+?>
+```
+
+<p align = "right">7.14. Przekierowanie użytkownika</p>
+
+Funkcja `header()` pozwala na wysyłanie nagłówków *HTTP*. `exit()` jest używana do zakończenia skryptu po wysłaniu nagłówka.
+
+## Polecenia - formularze
+
+1. 
+   - Stwórz formularz, który przyjmuje imię, nazwisko oraz wiek użytkownika.
+   - Dodaj walidację, która sprawdza, czy wiek jest liczbą z zakresu *[1; 120]*.
+   - Rozszerz skrypt obsługi formularza tak, aby przekierowywał na stronę z podziękowaniami w przypadku poprawnego przesłania danych.
+
+2. 
+   - Utwórz formularz rejestracyjny składający się z imienia, nazwiska, adresu email, hasła oraz powtórzenia hasła.
+   - Dodaj walidację, która sprawdzi, czy zostały podane imię, nazwisko oraz email, hasło ma przynajmniej 8 znaków i hasła się zgadzają.
+   - Po poprawnym zarejestrowaniu użytkownik powinien zostać przekierowany do strony powitalnej, gdzie wyświetli się jego imię i nazwisko.
