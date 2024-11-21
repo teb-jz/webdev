@@ -31,6 +31,9 @@
    - [Polecenia - podstawy](#polecenia---podstawy)
    - [Formularze](#formularze)
    - [Polecenia - formularze](#polecenia---formularze)
+   - [Łączenie z bazą danych](#łączenie-z-bazą-danych)
+   - [Wysyłanie zapytań SQL](#wysyłanie-zapytań-sql)
+   - [Polecenia - bazy danych](#polecenia---bazy-danych)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -839,3 +842,133 @@ Funkcja `header()` pozwala na wysyłanie nagłówków *HTTP*. `exit()` jest uży
    - Utwórz formularz rejestracyjny składający się z imienia, nazwiska, adresu email, hasła oraz powtórzenia hasła.
    - Dodaj walidację, która sprawdzi, czy zostały podane imię, nazwisko oraz email, hasło ma przynajmniej 8 znaków i hasła się zgadzają.
    - Po poprawnym zarejestrowaniu użytkownik powinien zostać przekierowany do strony powitalnej, gdzie wyświetli się jego imię i nazwisko.
+
+## Łączenie z bazą danych
+
+*PHP* umożliwia łatwe i efektywne łączenie z bazami danych, co pozwala na tworzenie dynamicznych aplikacji webowych. Najczęściej stosowaną bazą danych w połączeniu z *PHP* jest *MySQL*.
+
+Przykład połączenia z bazą danych
+
+```PHP
+
+<?php
+
+$host = "localhost";
+$username = "root";
+$password = "";
+$dbname = "example";
+
+$conn = new mysqli($host, $username, $password, $dbname);
+
+if ($conn->connect_error) {
+
+    die("Połączenie nieudane: " . $conn->connect_error);
+}
+
+echo "Połączono z bazą danych.";
+
+$conn->close();
+
+?>
+
+```
+
+<p align = "right">7.15. Tworzenie połączenia</p>
+
+Jeśli połączenie jest nieudane, metoda connect_error zwraca szczegóły błędu.
+
+> Należy pamiętać o zamknięciu połączenia.
+
+## Wysyłanie zapytań SQL
+
+Po nawiązaniu połączenia możemy wykonywać zapytania SQL.
+
+```PHP
+
+<?php
+
+$conn = new mysqli("localhost", "root", "", "example");
+
+if ($conn->connect_error) {
+
+    die("Połączenie nieudane: " . $conn->connect_error);
+}
+
+$sql = "SELECT id, name FROM users";
+
+$result = $conn->query($sql);
+
+if ($result->num_rows > 0) {
+
+    while ($row = $result->fetch_assoc()) {
+
+        echo "ID: " . $row["id"] . " - Name: " . $row["name"] . "<br>";
+    }
+
+}
+
+else {
+
+    echo "Brak wyników.";
+}
+
+$conn->close();
+
+?>
+
+```
+
+<p align = "right">7.16. Zapytanie do bazy - SELECT</p>
+
+Metoda `fetch_assoc()` zwraca wyniki w formie tablicy asocjacyjnej.
+
+```PHP
+
+<?php
+
+$conn = new mysqli("localhost", "root", "", "example");
+
+if ($conn->connect_error) {
+
+    die("Połączenie nieudane: " . $conn->connect_error);
+}
+
+$sql = "INSERT INTO users (name, email) VALUES ('Johannes', 'johannes_paul@example.com')";
+
+if ($conn->query($sql)) {
+
+    echo "Nowy rekord został dodany.";
+}
+
+else {
+
+    echo "Błąd: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+?>
+
+```
+
+<p align = "right">7.17. Zapytanie do bazy - INSERT</p>
+
+## Polecenia - bazy danych
+
+Przykładowa tabela `uczniowie` z bazy `szkola`:
+
+ID | imie | nazwisko | wiek | klasa
+---|---|---|---|---
+1 | Anna | Kowalska | 16 | 1A
+2 | Jan | Nowak | 17 | 2B
+3 | Maria | Wiśniewska | 15 | 1B
+4 | Tomasz | Zieliński | 18 | 3A
+5 | Ewa | Jabłońska | 16 | 2A
+
+---
+
+- Połącz się z bazą danych `szkola` i wyświetl wszystkie rekordy z tabeli `uczniowie`.
+
+- Połącz się z bazą danych `szkola` i nazwiska pełnoletnich uczniów.
+
+- Stwórz formularz, za pośrednictwem którego można dodawać nowych uczniów. Obok formularza ma znaleźć się tabela zawierająca wszystkie rekordy z tabeli `uczniowie`. Należy zadbać o podstawową walidację - imię, nazwisko oraz klasa nie mogą być puste, a wiek powinien należeć do rozsądnego przedziału.
