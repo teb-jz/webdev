@@ -955,6 +955,8 @@ $conn->close();
 
 ## Polecenia - bazy danych
 
+### 1. Szkoła
+
 Przykładowa tabela `uczniowie` z bazy `szkola`:
 
 ID | imie | nazwisko | wiek | klasa
@@ -972,3 +974,21 @@ ID | imie | nazwisko | wiek | klasa
 - Połącz się z bazą danych `szkola` i nazwiska pełnoletnich uczniów.
 
 - Stwórz formularz, za pośrednictwem którego można dodawać nowych uczniów. Obok formularza ma znaleźć się tabela zawierająca wszystkie rekordy z tabeli `uczniowie`. Należy zadbać o podstawową walidację - imię, nazwisko oraz klasa nie mogą być puste, a wiek powinien należeć do rozsądnego przedziału.
+
+### 2. Sklep
+
+Przykładowa tabela `produkty` z bazy `sklep`:
+
+ID | Nazwa | Kategoria | Cena | Ilość
+---|---|---|---|---
+1 | Laptop | Elektronika | 3500.00 | 12
+2 | Smartfon | Elektronika | 2000.00 | 25
+3 | Biurko | Meble | 450.00 | 5
+4 | Krzesło | Meble | 150.00 | 20
+5 | Lodówka | AGD | 2400.00 | 7
+
+- Stwórz formularz, za pomocą którego można dodawać nowe produkty do tabeli `produkty`. Formularz powinien zawierać pola dla nazwy, kategorii, ceny i ilości. Walidacja powinna sprawdzać, czy:
+    - nazwa i kategoria nie są puste,
+    - cena jest liczbą większą od zera,
+    - ilość jest liczbą całkowitą większą lub równą zeru.
+- Wyświetl produkty z podziałem na kategorie, w formie tabeli. W ostatniej kolumnie umieść łączną cenę danych produktów znajdujących się w sklepie.
