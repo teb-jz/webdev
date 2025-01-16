@@ -34,6 +34,10 @@
    - [Łączenie z bazą danych](#łączenie-z-bazą-danych)
    - [Wysyłanie zapytań SQL](#wysyłanie-zapytań-sql)
    - [Polecenia - bazy danych](#polecenia---bazy-danych)
+8. [React](#react)
+   - [Instalacja](#instalacja)
+   - [Tworzenie projektu](#tworzenie-projektu)
+   - [Struktura projektu](#struktura-projektu)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -992,3 +996,40 @@ ID | Nazwa | Kategoria | Cena | Ilość
     - cena jest liczbą większą od zera,
     - ilość jest liczbą całkowitą większą lub równą zeru.
 - Wyświetl produkty z podziałem na kategorie, w formie tabeli. W ostatniej kolumnie umieść łączną cenę danych produktów znajdujących się w sklepie.
+
+<a name = "react"></a>
+# 8. React
+
+**React.js**, framework JavaScript stworzony przez firmę Facebook. Jest wykorzystywany do budowy interaktywnych interfejsów użytkownika w aplikacjach internetowych.
+
+React opiera się na koncepcji *komponentów*, czyli samodzielnych, hermetycznych części interfejsu użytkownika. Komponenty mogą zawierać logikę, widoki i style, co ułatwia organizację kodu.
+
+## Instalacja
+
+Do korzystania z Reacta wymagane są dwa główne narzędzia - **Node.js** i **npm** (*Node Package Manager*). Node.js pozwala uruchamiać JavaScript poza przeglądarką, a npm umożliwia instalację i zarządzanie pakietami, w tym React.
+
+Instalator Node można pobrać z [oficialnej strony](https://nodejs.org/en). Zawiera on również npm.
+
+## Tworzenie projektu
+
+Do stworzenie podstawowego projektu można posłużyć się narzędziem `create-react-app` dostępnym w npx.
+
+```bash
+npx create-react-app <nazwa-projektu>
+cd <nazwa-projektu>
+npm start
+```
+
+Polecenie `npm start` odpowiada za uruchomienie aplikacji. Aby ją wyświetlić wystarczy kliknąć w link wyświetlony w konsoli lub uruchomić przeglądarkę i przejść do `localhost` z odpowienim portem.
+
+## Struktura projektu
+
+![project](./reactfiles.png)
+
+Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `create-react-app`. Kluczowe elementy to:
+- `node_modules` - katalog, w którym przechowywane są wszystkie zależności projektu,
+- `public` - katalog zawierający pliki statyczne, takie jak pliki HTML, ikony, czy grafiki,
+- `src` - katalog zawierający kod źródłowy projektu. Tutaj znajdują się komponenty, testy i inne pliki związane z logiką aplikacji,
+- `App.js` - główny komponent aplikacji, który może zawierać inne komponenty.
+- `index.js` - plik startowy, w którym następuje montowanie głównego komponentu.
+- `index.html` - główny plik HTML. Jest punktem wejścia dla aplikacji React.
