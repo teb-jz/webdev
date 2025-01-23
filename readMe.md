@@ -38,6 +38,9 @@
    - [Instalacja](#instalacja)
    - [Tworzenie projektu](#tworzenie-projektu)
    - [Struktura projektu](#struktura-projektu)
+   - [Podstawowa aplikacja](#podstawowa-aplikacja)
+   - [Propsy](#propsy)
+   - [useState](#usestate)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -1012,24 +1015,134 @@ Instalator Node można pobrać z [oficialnej strony](https://nodejs.org/en). Zaw
 
 ## Tworzenie projektu
 
-Do stworzenie podstawowego projektu można posłużyć się narzędziem `create-react-app` dostępnym w npx.
+Do stworzenie podstawowego projektu można posłużyć się narzędziem `vite` dostępnym w npm, korzystając z komendy `npm create vite`.
 
 ```bash
-npx create-react-app <nazwa-projektu>
-cd <nazwa-projektu>
-npm start
+npm create vite
+# <project name>
+# <framework>
+# <variant>
 ```
 
-Polecenie `npm start` odpowiada za uruchomienie aplikacji. Aby ją wyświetlić wystarczy kliknąć w link wyświetlony w konsoli lub uruchomić przeglądarkę i przejść do `localhost` z odpowienim portem.
+<p align = "right">8.1. Tworzenie projektu</p>
+
+Następnie należy postępować zgodnie z kolejnymi instrukcjami.
+
+```bash
+cd <project_name>
+npm install
+npm run dev
+```
+
+<p align = "right">8.2. Uruchomienie projektu</p>
+
+Polecenie `npm run dev` odpowiada za uruchomienie aplikacji. Aby ją wyświetlić wystarczy kliknąć w link wyświetlony w konsoli lub uruchomić przeglądarkę i przejść do `localhost` z odpowienim portem.
 
 ## Struktura projektu
 
-![project](./reactfiles.png)
+![project](./vitefiles.png)
 
-Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `create-react-app`. Kluczowe elementy to:
+Powyższa struktura to ogólny szkielet projektu React utworzonego za pomocą narzędzia `vite`. Kluczowe elementy to:
 - `node_modules` - katalog, w którym przechowywane są wszystkie zależności projektu,
 - `public` - katalog zawierający pliki statyczne, takie jak pliki HTML, ikony, czy grafiki,
 - `src` - katalog zawierający kod źródłowy projektu. Tutaj znajdują się komponenty, testy i inne pliki związane z logiką aplikacji,
-- `App.js` - główny komponent aplikacji, który może zawierać inne komponenty.
-- `index.js` - plik startowy, w którym następuje montowanie głównego komponentu.
+- `App.jsx` - główny komponent aplikacji, który może zawierać inne komponenty.
+- `index.jsx` - plik startowy, w którym następuje montowanie głównego komponentu.
 - `index.html` - główny plik HTML. Jest punktem wejścia dla aplikacji React.
+
+## Podstawowa aplikacja
+
+Przy tworzeniu podstawowej aplikacji React skupimy się na trzech głównych plikach.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <main></main>
+    <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
+```
+
+<p align = "right">8.3. index.html</p>
+
+```jsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App.jsx';
+
+ReactDOM.createRoot(document.querySelector('main'))
+    .render(
+        <React.StrictMode>
+            <App />
+        </React.StrictMode>
+    );
+```
+
+<p align = "right">8.4. main.jsx</p>
+
+```jsx
+const App = () => {
+
+    return (
+        <div>
+            <h1>Lorem ipsum</h1>
+        </div>
+    );
+};
+
+export default App;
+```
+
+<p align = "right">8.5. App.jsx</p>
+
+## Propsy
+
+Propsy to argumenty przekazywane do komponentu. Ich wartość można wykorzystać podczas renderowania.
+
+```jsx
+const Section = ({ text }) => {
+
+    return (
+        <div>
+            <p>{ text }</p>
+        </div>
+    );
+};
+
+export default Section;
+```
+
+```html
+<Section text = "Sample text" />
+```
+
+<p align = "right">8.6. Propsy</p>
+
+## UseState
+
+Do zarządzania stanem komponentu możemy skorzystać z funkcji `useState`. Oferuje zmienną przechowującą stan oraz funkcjię odpowiadającą za jego ustawienie.
+
+```jsx
+import { useState } from "react";
+
+const Button = () => {
+
+    const [state, setState] = useState(0);
+
+    function clicked () {
+
+        setState(oldState => oldState + 1);
+    }
+
+    return <button type = "button" onClick = { clicked }>{ state }</button>;
+};
+
+export default Button;
+```
+
+<p align = "right">8.7. UseState</p>
