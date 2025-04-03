@@ -41,6 +41,7 @@
    - [Podstawowa aplikacja](#podstawowa-aplikacja)
    - [Propsy](#propsy)
    - [useState](#usestate)
+9. [Projekty](#projekty)
 
 <a name = "wprowadzenie"></a>
 # 1. Wprowadzenie
@@ -1146,3 +1147,23 @@ export default Button;
 ```
 
 <p align = "right">8.7. UseState</p>
+
+<a name = "projekty"></a>
+# 9. Projekty
+
+## 1. Gra w kości
+
+## 2. Gra w wojnę
+
+## 3. Liczenie kalorii
+
+## 4. Tablica ogłoszeń
+
+Interaktywna tablica ogłoszeń, wpisy wyświetlane są w postaci listy lub kafelków.
+
+Funkcjonalności:
+
+- Dodawanie ogłoszeń, składających się z *tytułu*, *kategorii*, *treści* oraz *daty zamieszczenia*.
+- Usuwanie oraz edytowanie ogłoszenia.
+- Filtrowanie ogłoszeń według kategorii.
+- Zmiana sposobu wyświetlania ogłoszeń - alfabetycznie po tytułach lub po dacie zamieszczenia.
