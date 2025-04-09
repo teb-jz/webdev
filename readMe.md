@@ -1153,9 +1153,39 @@ export default Button;
 
 ## 1. Gra w kości
 
+Gra jednoosobowa, w której gracz rzuca wirtualną kością sześcienną.
+
+Funkcjonalności:
+
+- Losowanie liczby oczek od 1 do 6 po kliknięciu przycisku.
+- Wyświetlanie wylosowanej liczby oraz graficznej reprezentacji kości.
+- Tryb zgadywania liczby: gracz wybiera konkretną liczbę od 1 do 6.
+- Tryb High/Low: gracz wybiera, czy wypadnie niska liczba oczek (1–3) czy wysoka (4–6).
+- Zliczanie poprawnych oraz błędnych odpowiedzi.
+- Możliwość resetowania punktacji i ponownego rozpoczęcia gry.
+
 ## 2. Gra w wojnę
 
+Klasyczna gra karciana, gdzie gracz mierzy się z komputerem, porównując wartości kart w każdej rundzie.
+
+Funkcjonalności:
+
+- Generowanie i losowe przetasowanie talii kart.
+- Rozdzielenie talii kart między gracza i komputer.
+- Automatyczne rozgrywanie rund: porównanie dwóch kart i przydzielenie punktu wygranemu. Gra toczy się do wyczerpania kart, na końcu ogłoszenie zwycięzcy.
+- Prosty interfejs z wizualizacją kart.
+
 ## 3. Liczenie kalorii
+
+Aplikacja umożliwiająca użytkownikowi śledzenie dziennego spożycia kalorii.
+
+Funkcjonalności:
+
+- Dodawanie posiłków z nazwą, liczbą kalorii i kategorią (śniadanie, obiad, kolacja, przekąska).
+- Wyświetlanie sumy spożytych kalorii w danym dniu.
+- Możliwość filtrowania posiłków według kategorii.
+- Możliwość określenia dziennego zapotrzebowania.
+- Edytowanie i usuwanie wpisów.
 
 ## 4. Tablica ogłoszeń
 
@@ -1167,3 +1197,14 @@ Funkcjonalności:
 - Usuwanie oraz edytowanie ogłoszenia.
 - Filtrowanie ogłoszeń według kategorii.
 - Zmiana sposobu wyświetlania ogłoszeń - alfabetycznie po tytułach lub po dacie zamieszczenia.
+
+## 5. Planer lekcji
+
+Aplikacja do organizacji planu zajęć i tygodniowych zadań, dostosowana do ucznia.
+
+Funkcjonalności:
+
+- Dodawanie przedmiotów lub aktywności do konkretnych dni tygodnia i godzin.
+- Przegląd planu lekcji w formie tabeli lub listy.
+- Edytowanie i usuwanie zajęć.
+- Możliwość dodawania notatek do poszczególnych lekcji (np. *sprawdzian*, *praca domowa*).
