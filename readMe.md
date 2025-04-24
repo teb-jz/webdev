@@ -1208,3 +1208,16 @@ Funkcjonalności:
 - Przegląd planu lekcji w formie tabeli lub listy.
 - Edytowanie i usuwanie zajęć.
 - Możliwość dodawania notatek do poszczególnych lekcji (np. *sprawdzian*, *praca domowa*).
+
+## 6. Watchlist
+
+Aplikacja, do tworzenia własnej listy filmów lub seriali, które chce się obejrzeć.
+
+Funkcjonalności:
+
+- Dodawanie *tytułu* filmu/serialu, *gatunku* i krótkiego *opisu*.
+- Możliwość oznaczenia filmu jako ,,obejrzany''.
+- Usuwanie i edytowanie pozycji z listy.
+- Filtrowanie według *gatunku* lub *statusu*.
+- Dane przechowywane lokalnie `localStorage`.
+- 
