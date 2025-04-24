@@ -1220,4 +1220,3 @@ Funkcjonalności:
 - Usuwanie i edytowanie pozycji z listy.
 - Filtrowanie według *gatunku* lub *statusu*.
 - Dane przechowywane lokalnie `localStorage`.
-- 
