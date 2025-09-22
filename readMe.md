@@ -13,7 +13,7 @@
 * Strona składa się z *belki górnej* z *nagłówkiem*, *części głównej* oraz *belki dolnej* z *nagłówkiem*.
 * *Część główna* podzielona jest na *artykuł* i *część poboczną*.
 * W *artykule* znajduje się *nagłówek*, *akapit*, *pozioma linia*, *akapit*, pięcioelementowa *lista nienumerowana* i kolejny *akapit*.
-* *Część poboczna* zawiera dwa *akapity*, *tabelę* o wymiarach *3 x 5* oraz kolejny *akapit*.
+* *Część poboczna* zawiera dwa *akapity*, *tabelę* o wymiarach *3 x 4* oraz kolejny *akapit*.
 
 ### Wygląd
 
