@@ -30,3 +30,33 @@
 ### Oczekiwany wygląd witryny
 
 ![Strona - p1](img/p1.png)
+
+## 2. Układanie i stylizowanie podstawowych elementów witryny
+
+### Zawartość
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **main** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Strona**.
+* Prawidłowo połączony zewnętrzny arkusz stylów.
+* Witryna jest podzielona na *semantyczne elementy blokowe*.
+* Strona składa się z *belki górnej* z *nagłówkiem*, *części głównej* oraz *belki dolnej* z *nagłówkiem*.
+* *Część główna* podzielona jest na *formularz* i *artykuł*.
+* Formularz zawiera cztery *pola wprowadzania* o odpowiednim typie, poprzedzone prawidłowo połączonymi *etykietami*, oraz *przycisk*.
+* W *artykule* znajduje się *nagłówek* i dwie *sekcje* podzielone na *akapity*.
+* W jednej z *sekcji* znajduje się zagnieżdżona *lista*.
+
+### Wygląd
+
+* Strona powinna w jak największym stopniu przypominać załączoną grafikę.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie **main** i odpowiednim rozszerzeniu.
+* Zastosowane kolory:
+  * `#495F75`,
+  * `#D28140`,
+  * `#E6CDAE`,
+  * `#DCD7D5`.
+* Krój czcionki: **Arial**.
+* Należy zadbać o podstawową responsywność.
+
+### Oczekiwany wygląd witryny
+
+![Strona - p2](img/p2.png)
