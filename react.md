@@ -26,3 +26,15 @@ Symulator działania windy w budynku wielopiętrowym. Użytkownik ma możliwoś�
 - Przyciski odnoszące się do poszczególnych pięter.
 - Animacja przejazdu windy.
 - Wyświetlanie aktualnego piętra i kierunku jazdy.
+
+## 3. Parking
+
+Symulator parkingu samochodowego, pozwalający na obserwowanie zajętości miejsc.
+
+#### Funkcjonalności:
+
+- Graficzna reprezentacja parkingu, w zależności od wymiarów podanych przez użytkownika.
+- Mechanika zwalniania i zajmowania miejsc - zmiana statusu po kliknięciu.
+- Licznik zajętych i wolnych miejsc, wyświetlanie obłożenia w procentach.
+- Reset parkingu - zwolnienie miejsc i zresetowanie liczników.
+- Podział na tryb ręczny i automatyczny. W trybie automatycznym, co kilka sekund, miejsca są losowo zwalniane i zajmowane.
