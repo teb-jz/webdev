@@ -38,3 +38,16 @@ Symulator parkingu samochodowego, pozwalający na obserwowanie zajętości miejs
 - Licznik zajętych i wolnych miejsc, wyświetlanie obłożenia w procentach.
 - Reset parkingu - zwolnienie miejsc i zresetowanie liczników.
 - Podział na tryb ręczny i automatyczny. W trybie automatycznym, co kilka sekund, miejsca są losowo zwalniane i zajmowane.
+
+## 4. Lista obecności
+
+Aplikacja do zarządzania listą uczniów i oznaczania ich obecności na zajęciach.
+
+Funkcjonalności:
+
+- Wyświetlanie listy uczniów.
+- Dodawanie nowych uczniów poprzez formularz.
+- Usuwanie uczniów z listy.
+- Możliwość wybrania jednego z trzech stanów - obecność, nieobecność, spóźnienie, przy danym uczniu.
+- Licznik obecnych, nieobecnych oraz spóźnionych uczniów.
+- Filtrowanie listy uczniów po stanie obecności.
