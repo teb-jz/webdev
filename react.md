@@ -51,3 +51,18 @@ Funkcjonalności:
 - Możliwość wybrania jednego z trzech stanów - obecność, nieobecność, spóźnienie, przy danym uczniu.
 - Licznik obecnych, nieobecnych oraz spóźnionych uczniów.
 - Filtrowanie listy uczniów po stanie obecności.
+
+## 5. Dziennik ocen (*)
+
+Symulator prostego dziennika szkolnego.
+
+Funkcjonalności:
+
+- Wyświetlanie listy uczniów oraz ich ocen.
+- Możliwość dodawania nowych uczniów poprzez formularz.
+- Możliwość usuwania uczniów z listy.
+- Możliwość wpisywania ocen o podanej kategorii, wadze, opisie oraz dacie wstawienia. Kategoria powinna być wybierana spośród istniejących. Data powinna pokrywać się z czasem wstawienia oceny, chyba że użytkownik zadecyduje inaczej.
+- Możliwość usuwania ocen.
+- Obliczanie i wyświetlanie średniej ocen danego ucznia.
+- Sortowanie listy uczniów po numerze w dzienniku, alfabetycznie po nazwisku oraz po średniej.
+- Filtrowanie listy uczniów po nazwisku lub progu średniej.
