@@ -56,6 +56,10 @@ Funkcjonalności:
 
 Symulator prostego dziennika szkolnego.
 
+Wygląd:
+
+<img width="69%" alt="Image" src="https://github.com/user-attachments/assets/2d80b6cd-08c4-4d19-91b7-df132b54516e" />
+
 Funkcjonalności:
 
 - Wyświetlanie listy uczniów oraz ich ocen.
@@ -66,3 +70,4 @@ Funkcjonalności:
 - Obliczanie i wyświetlanie średniej ocen danego ucznia.
 - Sortowanie listy uczniów po numerze w dzienniku, alfabetycznie po nazwisku oraz po średniej.
 - Filtrowanie listy uczniów po nazwisku lub progu średniej.
+
