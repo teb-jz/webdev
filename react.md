@@ -66,3 +66,16 @@ Funkcjonalności:
 - Obliczanie i wyświetlanie średniej ocen danego ucznia.
 - Sortowanie listy uczniów po numerze w dzienniku, alfabetycznie po nazwisku oraz po średniej.
 - Filtrowanie listy uczniów po nazwisku lub progu średniej.
+
+## 6. Sterownik klimatyzacji
+
+Aplikacja symulująca panel sterowania klimatyzacją, umożliwiającą użytkownikowi kontrolę temperatury i trybu pracy urządzenia.
+
+Funkcjonalności:
+
+- Wyświetlanie aktualnej temperatury.
+- Możliwość ustalenia temperatury docelowej.
+- Wybór trybu pracy - chłodzenie, ogrzewanie, wentylacja, wyłączone. Wizualna informacja o stanie - kolor tła zależy od trybu.
+- Przycisk resetujący ustawienia.
+- Symulacja zmiany temperatury w pomieszczeniu.
+- Sterowanie za pomocą klawiatury.
