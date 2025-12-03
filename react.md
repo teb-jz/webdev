@@ -79,3 +79,14 @@ Funkcjonalności:
 - Przycisk resetujący ustawienia.
 - Symulacja zmiany temperatury w pomieszczeniu.
 - Sterowanie za pomocą klawiatury.
+
+## 7. Smart Home
+
+Aplikacja symulująca panel sterowania systemem Smart Home, umożliwiająca sterowanie różnymi urządzeniami oraz monitorowanie ich stanu.
+
+Funkcjonalności:
+
+- Wyświetlanie listy urządzeń - *ikona*, *nazwa* i *status*.
+- Możliwość sterowania poszczególnymi urządzeniami. Predefiniowana lista dostępnych urządzeń, z których każde posiada indywidualne opcje.
+- Wybór jednego z trybów - *normalny*, *nocny*, *poza domem*. Każdy z trybów cechują inne opcje poszczególnych urządzeń.
+- Historia zdarzeń - lista zmian opcji urządzeń.
