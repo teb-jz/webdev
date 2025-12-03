@@ -80,7 +80,7 @@ Funkcjonalności:
 - Symulacja zmiany temperatury w pomieszczeniu.
 - Sterowanie za pomocą klawiatury.
 
-## 7. Smart Home
+## 7. Smart Home (*)
 
 Aplikacja symulująca panel sterowania systemem Smart Home, umożliwiająca sterowanie różnymi urządzeniami oraz monitorowanie ich stanu.
 
