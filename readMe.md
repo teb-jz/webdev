@@ -60,3 +60,37 @@
 ### Oczekiwany wygląd witryny
 
 ![Strona - p2](img/p2.png)
+
+## 3. Podstawy obsługi formularza
+
+### Zawartość
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **main** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Strona**.
+* Prawidłowo połączony zewnętrzny arkusz stylów.
+* Witryna jest podzielona na *semantyczne elementy blokowe*.
+
+* Strona składa się z *belki górnej*, *części głównej* oraz *belki dolnej*.
+* *Część główna* podzielona jest na *formularz* i *sekcję*.
+* Formularz zawiera sześć *pól wprowadzania* o odpowiednim typie, poprzedzone prawidłowo połączonymi *etykietami*, oraz *przycisk*.
+* W *sekcji* znajduje się *element blokowy*.
+
+### Wygląd
+
+* Strona powinna w jak największym stopniu przypominać załączoną grafikę.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie **main** i odpowiednim rozszerzeniu.
+* Zastosowane kolory:
+  * `#1B263B`,
+  * `#415A77`,
+  * `#778DA9`,
+  * `#E0E1DD`,
+* Krój czcionki: **Helvetica**.
+* Należy zadbać o podstawową responsywność.
+
+### Działanie
+
+Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *zawartość*, *rozmiar* i *kolor czcionki*, *kolor tła* oraz *wymiary* elementu, a następnie przypisywane elementowi blokowemu.
+
+### Oczekiwany wygląd witryny
+
+![Strona - p3](img/p3.png)
