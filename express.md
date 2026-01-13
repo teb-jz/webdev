@@ -84,6 +84,41 @@ app.get('/api', (req, res) => {
 
 Występują po znaku `?` w *URL*, na przykład `/api?x=6&y=7`. Odczytujemy je przez `req.query`.
 
+## Obsługa formularza
+
+W celu obsługi formularzy należy skonfigurować *middleware*.
+
+```js
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+```
+
+I *middleware* odpowiedzialny za pliki statyczne.
+
+```js
+app.use(express.static('public'));
+```
+
+A następnie w folderze `/public` przygotować sam formularz.
+
+```html
+<form action = "/form" method = "POST">
+    <input type = "number" name = "a">
+    <button type = "submit">Wyślij</button>
+</form>
+```
+
+Oraz *endpoint* odpowiedzialny za odebranie z niego danych.
+
+```js
+app.post('/form', (req, res) => {
+
+    const { x } = req.body;
+
+    res.send(`x = ${x}`);
+});
+```
+
 <a name = "zadania"></a>
 # Zadania
 
@@ -127,3 +162,28 @@ Występują po znaku `?` w *URL*, na przykład `/api?x=6&y=7`. Odczytujemy je pr
 9. Zmodyfikuj poprzednie zadanie, aby zakres był możliwy do określenia poprzez parametry *URL*.
 
 10. Zmodyfikuj poprzednie zadanie, aby istniała możliwość określenia ilości liczb do wygenerowania. Wynik zwróć w postaci tablicy liczb.
+
+---
+
+11. Stwórz stronę HTML z formularzem złożonym z pól:
+
+    - imię,
+
+    - email,
+
+    - wiadomość.
+
+Wyślij dane metodą POST na `/kontakt`. Serwer ma wyświetlić podsumowanie:
+
+```
+Wiadomość od <imię> (<email>):
+<treść>
+```
+
+12. Kalkulator prosty. Formularz HTML z dwoma polami odpowiadającymi liczbom. Po wysłaniu na `/calc` serwer zwraca wynik dodawania tych liczb.
+
+13. Dodawanie elementu do tablicy. Utwórz tablicę `produkty`. Stwórz formularz *POST* `/dodaj` z polem **nazwa**
+
+Po wysłaniu dodaj produkt do tablicy,
+
+Przygotuj endpoint `/wyswietl`, który wyświetli zaktualizowaną listę produktów w formacie **json**.
