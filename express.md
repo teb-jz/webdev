@@ -119,25 +119,36 @@ app.post('/form', (req, res) => {
 });
 ```
 
+## Ręczne serwowanie stron
+
+W przypadku gdy nie chcemy udostępniać całego folderu, chcemy wskazać konkretny plik lub kontrolować ścieżkę skorzystamy z `sendFile`.
+
+```js
+app.get('/', (req, res) =>
+
+    res.sendFile('public/index.html', { root: '.' });
+);
+```
+
 <a name = "zadania"></a>
 # Zadania
 
-1. Stwórz aplikację Express, która uruchamia serwer na porcie *3000* i wyświetla w przeglądarce tekst *Witaj świecie!*
+1.1. Stwórz aplikację Express, która uruchamia serwer na porcie *3000* i wyświetla w przeglądarce tekst *Witaj świecie!*
 
-2. Dodaj do serwera trzy endpointy:
+1.2. Dodaj do serwera trzy endpointy:
     - `/about` - wyświetla tekst **Informacje o stronie**,
     - `/contact` - wyświetla tekst **Email: xpp<span></span>@xdd.pl**,
     - `/time` - wyświetla aktualny czas.
 
-3. Stwórz endpoint `/hello/:name` przyjmujący parametr *imie* i wyświetlający tekst **Witaj \<imie\>**.
+1.3. Stwórz endpoint `/hello/:name` przyjmujący parametr *imie* i wyświetlający tekst **Witaj \<imie\>**.
 
-4. Stwórz endpoint `/sum`, przyjmujący w URL parametry `a` i `b` i wyświetlający sumę podanych liczb.
+1.4. Stwórz endpoint `/sum`, przyjmujący w URL parametry `a` i `b` i wyświetlający sumę podanych liczb.
 
     Przykład użycia: `/sum?a=6&b=7`.
 
-5. Rozszerz poprzednie zadanie, dodając endpointy dla różnicy, iloczynu, ilorazu, kwadratu oraz pierwiastka kwadratowego.
+1.5. Rozszerz poprzednie zadanie, dodając endpointy dla różnicy, iloczynu, ilorazu, kwadratu oraz pierwiastka kwadratowego.
 
-6. Stwórz endpoint `/api/info`, który zwróci obiekt *JSON* o treści:
+1.6. Stwórz endpoint `/api/info`, który zwróci obiekt *JSON* o treści:
 
 ```json
 {
@@ -147,7 +158,7 @@ app.post('/form', (req, res) => {
 }
 ```
 
-7. Stwórz endpoint `/students`, który zwraca tablicę:
+1.7. Stwórz endpoint `/students`, który zwraca tablicę:
 
 ```json
 [
@@ -157,15 +168,15 @@ app.post('/form', (req, res) => {
 ]
 ```
 
-8. Stwórz *endpoint* `/random` generujący losową liczbę z zakresu *1–100*. Odpowiedź zwróć w formacie *json*.
+1.8. Stwórz *endpoint* `/random` generujący losową liczbę z zakresu *1–100*. Odpowiedź zwróć w formacie *json*.
 
-9. Zmodyfikuj poprzednie zadanie, aby zakres był możliwy do określenia poprzez parametry *URL*.
+1.9. Zmodyfikuj poprzednie zadanie, aby zakres był możliwy do określenia poprzez parametry *URL*.
 
-10. Zmodyfikuj poprzednie zadanie, aby istniała możliwość określenia ilości liczb do wygenerowania. Wynik zwróć w postaci tablicy liczb.
+1.10. Zmodyfikuj poprzednie zadanie, aby istniała możliwość określenia ilości liczb do wygenerowania. Wynik zwróć w postaci tablicy liczb.
 
 ---
 
-11. Stwórz stronę HTML z formularzem złożonym z pól:
+2.1. Stwórz stronę HTML z formularzem złożonym z pól:
 
     - imię,
 
@@ -180,10 +191,30 @@ Wiadomość od <imię> (<email>):
 <treść>
 ```
 
-12. Kalkulator prosty. Formularz HTML z dwoma polami odpowiadającymi liczbom. Po wysłaniu na `/calc` serwer zwraca wynik dodawania tych liczb.
+2.2. Kalkulator prosty. Formularz HTML z dwoma polami odpowiadającymi liczbom. Po wysłaniu na `/calc` serwer zwraca wynik dodawania tych liczb.
 
-13. Dodawanie elementu do tablicy. Utwórz tablicę `produkty`. Stwórz formularz *POST* `/dodaj` z polem **nazwa**
+2.3. Dodawanie elementu do tablicy. Utwórz tablicę `produkty`. Stwórz formularz *POST* `/dodaj` z polem **nazwa**
 
 Po wysłaniu dodaj produkt do tablicy,
 
 Przygotuj endpoint `/wyswietl`, który wyświetli zaktualizowaną listę produktów w formacie **json**.
+
+---
+
+3.1. Stwórz aplikację, która po wejściu na adres `/` odpowiada plikiem `index.html` z katalogu **public**.
+
+3.2 Utwórz `form.html` z polem `age` oraz metodą **POST** dla `/submit`. W route `/submit` odbierz dane za pomocą `req.body`. Jeśli wartość pola `age >= 18`, zwróć plik `adult.html`. Jeśli `age < 18`, zwróć `child.html`.
+
+3.3 Stwórz `login.html` z polami **login** i **password**. Jeśli użytkownik wpisze hasło **admin123**, wyślij plik `dashboard.html`
+W przeciwnym razie wyślij plik `error.html`.
+
+3.4 Stwórz formularz zawierający pola `a` i `b` oraz metodę POST dla `/calc`. wybór działania (select z opcjami: dodawanie, odejmowanie, mnożenie, dzielenie).
+
+- Jeśli wynik jest dodatni zwróć `positive.html`.
+- Jeśli wynik jest zero zwróć `zero.html`.
+- Jeśli wynik jest ujemny zwróć `negative.html`.
+
+<a name = "Projekty"></a>
+# Projekty
+
+Użytkownik może się rejestrować wpisując *imię*, *nazwisko*, *datę urodzenia*, *adres email* oraz *hasło* i *powtórzone hasło*. Imię*, i *nazwisko* powinny mieć przynajmniej trzy znaki, data powinna być wprowadzona, hasło ma mieć przynajmniej osiem słów. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, dane są dodawane do tablicy. Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkownik jest obecny w tablicy. Odpowiedź zwracana jest jako plik HTML przez `sendFile()`.
