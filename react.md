@@ -90,3 +90,14 @@ Funkcjonalności:
 - Możliwość sterowania poszczególnymi urządzeniami. Predefiniowana lista dostępnych urządzeń, z których każde posiada indywidualne opcje.
 - Wybór jednego z trybów - *normalny*, *nocny*, *poza domem*. Każdy z trybów cechują inne opcje poszczególnych urządzeń.
 - Historia zdarzeń - lista zmian opcji urządzeń.
+
+## 8. System rezerwacji wizyt
+
+Aplikacja umożliwia użytkownikom przeglądanie dostępnych terminów oraz rezerwację wizyt w wybranym przedziale czasowym.
+
+Funkcjonalności:
+
+- Wyświetlanie kalendarza lub listy dostępnych dni. Dostępnie terminy między 08:00, a 16:00, co 30 minut.
+- Rezerwacja danego terminu, w ramach pewnej usługi (na przykład strzyżenie, masaż, konsultacja...). Każda usługa może trwać wielokrotność 30 minut (30, 60, 90, 120...). Usługa ma określoną cenę oraz przypisaną ikonkę.
+- Możliwość anulowania rezerwacji.
+- Możliwość edytowania rezerwacji.
