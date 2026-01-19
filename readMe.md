@@ -1,4 +1,57 @@
 
+<a name = "wprowadzenie"></a>
+# Wprowadzenie
+
+Na początek należy odpowiednio przygotować strukturę HTML. Należy pamiętać o załączeniu skryptu przed końcem znacznika `body`.
+
+```html
+<form>
+    <input type = "text" id = "pole">
+    <button type = "button" id = "przycisk">Przycisk</button>
+</form>
+
+<p id = 'akapit'></p>
+
+<script src = 'script.js'></script>
+```
+
+W *javascript* pobieramy wszystkie interesujące nas elementy, do których będziemy się chcieli później odwoływać.
+
+```js
+const pole = document.querySelector('#pole')
+const przycisk = document.querySelector('#przycisk')
+const akapit = document.querySelector('#akapit')
+```
+
+Następnie przygotowujemy funkcję, która ma zostać wywołana po naciśnięciu przycisku. Wewnątrz pobieramy wartości pól i ustalamy dalsze działanie.
+
+```js
+function poKliknieciu () {
+
+    const wartosc = pole.value
+
+    // Zarządzanie wartościami (wewnątrz funkcji)
+}
+```
+
+Możemy dowolnie zarządzać własnościami danego elementu.
+
+```js
+    akapit.classList.add('nazwaKlasy') // Dodanie klasy
+    akapit.classList.remove('nazwaKlasy') // Usunięcie klasy
+
+    akapit.innerText = 'Nowa zawartość' // Wpisanie tekstu
+    akapit.innerHTML = '<h1>Nowa zawartość</h1>' // Wpisanie struktury
+
+    akapit.style.backgroundColor = 'red' // Zmiana stylu
+```
+
+Na koniec należy pamiętać o przypisaniu obsługi zdarzenia do przycisku.
+
+```js
+przycisk.addEventListener('click', poKliknieciu)
+```
+
 <a name = "projekty"></a>
 # Projekty
 
@@ -123,7 +176,7 @@ Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *
 
 ### Działanie
 
-Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *imię*, *nazwisko*, *adres email*, *hasło* oraz *powtórzone hasło*. Następnie wprowadzone dane są sprawdzane pod kątem poprawności. *Imię*, *nazwisko* i *email* powinny mieć przynajmnniej trzy litery, *hasło* przynajmniej osiem, ponadto *hasła* powinny być takie same. W zależności czy dane są poprawne wpisz w akapit poniżej przycisku tekst <span style = "color: green">**Dane poprawne**</span> lub <span style = "color: red">**Dane niepoprawne**</span>.
+Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *imię*, *nazwisko*, *adres email*, *hasło* oraz *powtórzone hasło*. Następnie wprowadzone dane są sprawdzane pod kątem poprawności. *Imię*, *nazwisko* i *email* powinny mieć przynajmniej trzy litery, *hasło* przynajmniej osiem, ponadto *hasła* powinny być takie same. W zależności czy dane są poprawne wpisz w akapit poniżej przycisku tekst ${\textsf{\color{green}Dane poprawne}}$ lub ${\textsf{\color{red}Dane niepoprawne}}$.
 
 ### Oczekiwany wygląd witryny
 
