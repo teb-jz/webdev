@@ -219,4 +219,4 @@ W przeciwnym razie wyślij plik `error.html`.
 
 ## 1. Rejestracja i logowanie
 
-    Użytkownik może się rejestrować wpisując *imię*, *nazwisko*, *datę urodzenia*, *adres email* oraz *hasło* i *powtórzone hasło*. *Imię*, i *nazwisko* powinny mieć przynajmniej trzy znaki, data powinna być wprowadzona, hasło ma mieć przynajmniej osiem znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, dane są dodawane do tablicy. Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkownik jest obecny w tablicy. Odpowiedź zwracana jest jako plik HTML przez `sendFile()`.
+Użytkownik może się rejestrować wpisując *imię*, *nazwisko*, *datę urodzenia*, *adres email* oraz *hasło* i *powtórzone hasło*. *Imię*, i *nazwisko* powinny mieć przynajmniej trzy znaki, data powinna być wprowadzona, hasło ma mieć przynajmniej osiem znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, dane są dodawane do tablicy. Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkownik jest obecny w tablicy. Odpowiedź zwracana jest jako plik HTML przez `sendFile()`.
