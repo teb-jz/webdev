@@ -180,4 +180,40 @@ Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *
 
 ### Oczekiwany wygląd witryny
 
-![Strona - p3](img/p4.png)
+![Strona - p4](img/p4.png)
+
+## 5. Zarządzanie danymi użytkownika
+
+### Zawartość
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Strona**.
+* Prawidłowo połączony zewnętrzny arkusz stylów.
+* Witryna jest podzielona na *semantyczne elementy blokowe*.
+
+* Strona składa się z *części głównej* oraz *belki dolnej*.
+* *Część główna* podzielona jest na *część poboczną* oraz *artykuł*.
+* W skład *części pobocznej* wchodzą dwa *formularze*, a w nich *etykiety*, *pola wprowadzania*, *przyciski* oraz *elementy liniowe*.
+* W *artykule* znajdują się dwa *akapity*, *pozioma linia*, *akapit*, *czteroelementowa lista numerowana* i jeszcze jeden *akapit*.
+* *Stopka* składa się z *pięcioelementowej listy nienumerowanej* i dwóch *akapitów*.
+
+### Wygląd
+
+* Strona powinna w jak największym stopniu przypominać załączoną grafikę.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie **style** i odpowiednim rozszerzeniu.
+* Zastosowane kolory:
+  * `f5cac3`<sub>16</sub>,
+  * `f28482`<sub>16</sub>,
+  * `f6bd60`<sub>16</sub>,
+* Krój czcionki: **'Arial'**.
+* Należy zadbać o podstawową responsywność.
+
+### Działanie
+
+- Po naciśnięciu pierwszego przycisku z pól pobierane są *imię* oraz *nazwisko* użytkownika i wyświetlane poniżej przycisku.
+
+- Po naciśnięciu drugiego przycisku z pól pobierane są *wartości liczbowe* podane przez użytkownika, a następnie ich *suma* pojawia się poniżej przycisku.
+
+### Oczekiwany wygląd witryny
+
+![Strona - p5](img/p5.png)
