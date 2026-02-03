@@ -219,4 +219,12 @@ W przeciwnym razie wyślij plik `error.html`.
 
 ## 1. Rejestracja i logowanie
 
-Użytkownik może się rejestrować wpisując *imię*, *nazwisko*, *datę urodzenia*, *adres email* oraz *hasło* i *powtórzone hasło*. *Imię*, i *nazwisko* powinny mieć przynajmniej trzy znaki, data powinna być wprowadzona, hasło ma mieć przynajmniej osiem znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, dane są dodawane do tablicy. Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkownik jest obecny w tablicy. Odpowiedź zwracana jest jako plik HTML przez `sendFile()`.
+Użytkownik może się rejestrować wpisując *imię*, *nazwisko*, *datę urodzenia*, *adres email* oraz *hasło* i *powtórzone hasło*. *Imię*, i *nazwisko* powinny mieć przynajmniej trzy znaki, data powinna być wprowadzona, hasło ma mieć przynajmniej osiem znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, dane są dodawane do tablicy.
+
+Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkownik jest obecny w tablicy. Odpowiedź zwracana jest jako plik HTML przez `sendFile()`.
+
+## 2. System postów
+
+Użytkownik może dodawać posty, podając tytuł oraz treść. Tytuł powinien mieć przynajmniej pięć znaków, a treść przynajmniej dziesięć znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, post zostaje dodany do tablicy.
+
+Każdy post posiada unikalne *id*, *tytuł*, *treść* oraz *datę utworzenia*. Użytkownik może wyświetlić listę wszystkich postów oraz przejść do widoku pojedynczego posta na podstawie jego id przekazanego w parametrze adresu URL (*parametr ścieżki*). Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
