@@ -42,6 +42,7 @@ Możemy dowolnie zarządzać własnościami danego elementu.
 
     akapit.innerText = 'Nowa zawartość' // Wpisanie tekstu
     akapit.innerHTML = '<h1>Nowa zawartość</h1>' // Wpisanie struktury
+    lista.innerHTML += '<li>Nowy podpunkt</li>' // Dopisanie struktury
 
     akapit.style.backgroundColor = 'red' // Zmiana stylu
 ```
@@ -217,3 +218,43 @@ Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *
 ### Oczekiwany wygląd witryny
 
 ![Strona - p5](img/p5.png)
+
+## 6. Zarządzanie danymi użytkownika
+
+### Zawartość
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Mój organizer**.
+* Prawidłowo połączony zewnętrzny arkusz stylów.
+* Witryna jest podzielona na *semantyczne elementy blokowe*.
+
+* Strona składa się z *belki górnej*, *części głównej* oraz *belki dolnej*.
+* *Część główna* podzielona jest na *część poboczną* oraz *artykuł*.
+* W skład *części pobocznej* wchodzą *nagłówek drugiego stopnia* i *formularz*, a w nich *etykiety*, *pole wprowadzania*, *lista wybierana*, *przycisk* oraz *element liniowy*.
+* W *artykule* znajduje się *nagłówek drugiego rzędu*, *pozioma linia* i pusta *lista uporządkowana*.
+* *Stopka* składa się z *czteroelementowej listy nienumerowanej*.
+
+### Wygląd
+
+* Strona powinna w jak największym stopniu przypominać załączoną grafikę.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie **index** i odpowiednim rozszerzeniu.
+* Zastosowane kolory:
+  * `355070`<sub>16</sub>,
+  * `6d597a`<sub>16</sub>,
+  * `b56576`<sub>16</sub>,
+  * `e56b6f`<sub>16</sub>,
+* Krój czcionki: **'Arial'**.
+* Należy zadbać o podstawową responsywność.
+* Po najechaniu kursorem na przycisk, jego tło zmienia się na delikatnie ciemniejsze.
+
+### Działanie
+
+Po naciśnięciu pierwszego przycisku *Dodaj zadanie* pobierana jest *nazwa zadania* oraz *priorytet*. Jeżeli pole jest puste, w elemencie liniowym poniżej formularza, wypisujemy komunikat ${\textsf{\color{red}Wpisz nazwę zadania!}}$. W przeciwnym wypadku wypisujemy ${\textsf{\color{green}Dodano zadanie}}$, a do listy w artykule dopisywany jest element `<li>` o zawartości w formacie:
+
+<p align = "center">[Priorytet] Nazwa zadania.</p>
+
+Dostępne priorytety to **niski**, **średni** i **wysoki**.
+
+### Oczekiwany wygląd witryny
+
+![Strona - p5](img/p6.png)
