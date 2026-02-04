@@ -219,7 +219,7 @@ Po naciśnięciu przycisku pobierane są wartości podane przez użytkownika - *
 
 ![Strona - p5](img/p5.png)
 
-## 6. Zarządzanie danymi użytkownika
+## 6. Organizer zadań
 
 ### Zawartość
 * Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
