@@ -228,3 +228,11 @@ Podczas logowania, przy pomocy *emaila* i *hasła* sprawdzamy czy taki użytkown
 Użytkownik może dodawać posty, podając tytuł oraz treść. Tytuł powinien mieć przynajmniej pięć znaków, a treść przynajmniej dziesięć znaków. Dane są walidowane po stronie serwera. Jeżeli walidacja przebiegła pomyślnie, post zostaje dodany do tablicy.
 
 Każdy post posiada unikalne *id*, *tytuł*, *treść* oraz *datę utworzenia*. Użytkownik może wyświetlić listę wszystkich postów oraz przejść do widoku pojedynczego posta na podstawie jego id przekazanego w parametrze adresu URL (*parametr ścieżki*). Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
+
+## 3. Lista zadań
+
+Użytkownik może dodawać zadania, podając ich treść. Treść zadania powinna mieć przynajmniej trzy znaki. Dane są walidowane po stronie serwera. Po poprawnej walidacji zadanie zostaje dodane do tablicy.
+
+Każde zadanie posiada *id*, *treść* oraz *informację*, czy zostało wykonane. Użytkownik może oznaczyć zadanie jako wykonane oraz usunąć zadanie na podstawie jego id (*parametr ścieżki*).
+
+Wszystkie operacje wykonywane są na danych przechowywanych w tablicy w pamięci serwera. Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
