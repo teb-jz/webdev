@@ -101,3 +101,15 @@ Funkcjonalności:
 - Rezerwacja danego terminu, w ramach pewnej usługi (na przykład strzyżenie, masaż, konsultacja...). Każda usługa może trwać wielokrotność 30 minut (30, 60, 90, 120...). Usługa ma określoną cenę oraz przypisaną ikonkę.
 - Możliwość anulowania rezerwacji.
 - Możliwość edytowania rezerwacji.
+
+## 9. System kolejkowy
+
+Aplikacja symulująca system kolejkowy stosowany w urzędach. Użytkownik pobiera numer, a stanowisko obsługi wywołuje kolejne osoby.
+
+Funkcjonalności:
+
+- Pobieranie numeru za pomocą przycisku.
+- Wyświetlanie oczekujących numerków, wyświetlanie aktualnie obsługiwanego numeru.
+- System obsługi klienta.
+- Podział na tryb ręczny i automatyczny - obsługa kolejnego klienta przy pomocy przycisku lub po danym czasie.
+- Reset systemu.
