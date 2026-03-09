@@ -236,3 +236,11 @@ Użytkownik może dodawać zadania, podając ich treść. Treść zadania powinn
 Każde zadanie posiada *id*, *treść* oraz *informację*, czy zostało wykonane. Użytkownik może oznaczyć zadanie jako wykonane oraz usunąć zadanie na podstawie jego id (*parametr ścieżki*).
 
 Wszystkie operacje wykonywane są na danych przechowywanych w tablicy w pamięci serwera. Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
+
+## 4. Koszyk zakupów
+
+Aplikacja posiada zdefiniowaną w kodzie tablicę dostępnych produktów. Każdy produkt ma *id*, *nazwę* oraz *cenę*. Użytkownik może dodać produkt do koszyka, podając jego *id*. Produkt dodawany jest do tablicy koszyka.
+
+Koszyk przechowuje *id* produktu oraz *ilość* sztuk. Użytkownik może usuwać produkty z koszyka oraz wyświetlać jego zawartość. System powinien obliczać łączną wartość koszyka.
+
+Wszystkie dane przechowywane są w tablicach w pamięci serwera. Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
