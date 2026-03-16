@@ -113,3 +113,15 @@ Funkcjonalności:
 - System obsługi klienta.
 - Podział na tryb ręczny i automatyczny - obsługa kolejnego klienta przy pomocy przycisku lub po danym czasie.
 - Reset systemu.
+
+## 10. System zgłoszeń w helpdesku
+
+Aplikacja symulująca system obsługi zgłoszeń technicznych, w którym użytkownicy zgłaszają problemy, a pracownik wsparcia technicznego obsługuje je w kolejności zgłoszeń.
+
+Funkcjonalności:
+
+- Dodawanie złoszeń poprzez podanie tytułu, predefiniowanej kategorii i krótkiego opisu problemu.
+- Wyświetalenie listy zgłoszeń oraz ich statusu (*nowe*, *w trakcie*, *rozwiązane*).
+- Obsługa zgłoszeń.
+- Filtrowanie zgłoszeń po kategorii i statusie. Sortowanie zgłoszeń alfabetycznie po tytule oraz po czasie dodania.
+- Licznik zgłoszeń z podziałem na status.
