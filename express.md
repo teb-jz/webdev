@@ -244,3 +244,13 @@ Aplikacja posiada zdefiniowaną w kodzie tablicę dostępnych produktów. Każdy
 Koszyk przechowuje *id* produktu oraz *ilość* sztuk. Użytkownik może usuwać produkty z koszyka oraz wyświetlać jego zawartość. System powinien obliczać łączną wartość koszyka.
 
 Wszystkie dane przechowywane są w tablicach w pamięci serwera. Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
+
+## 5. System rejestracji na wydarzenia
+
+Aplikacja umożliwia tworzenie wydarzeń oraz zapisywanie się użytkowników na wydarzenia. Użytkownik może utworzyć wydarzenie, podając jego *nazwę*, *datę* oraz *maksymalną liczbę uczestników*. Nazwa wydarzenia powinna mieć przynajmniej pięć znaków.
+
+Wydarzenia zapisywane są w tablicy i posiadają *id*, *nazwę*, *datę* oraz *maksymalną liczbę uczestników*. Użytkownik może wyświetlić listę wydarzeń oraz zapisać się na wybrane wydarzenie, podając swoje *imię* i *adres email*. Imię powinno mieć przynajmniej trzy znaki.
+
+Nie można zapisać się na wydarzenie, jeśli liczba uczestników osiągnęła maksymalny limit. Nie można również zapisać tego samego adresu email dwa razy na to samo wydarzenie. Dane są walidowane po stronie serwera.
+
+Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
