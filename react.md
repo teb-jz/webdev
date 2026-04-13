@@ -125,3 +125,17 @@ Funkcjonalności:
 - Obsługa zgłoszeń.
 - Filtrowanie zgłoszeń po kategorii i statusie. Sortowanie zgłoszeń alfabetycznie po tytule oraz po czasie dodania.
 - Licznik zgłoszeń z podziałem na status.
+
+## 11. Symulator playlisty
+
+Aplikacja symulująca działanie playlisty muzycznej.
+
+Funkcjonalności:
+
+- Dodawanie utworów, podając *tytuł* i *wykonawcę*. Po dodaniu utwór trafia na koniec kolejki.
+- Wyświetlanie aktualnie odtwarzanego utworu.
+- Kolejka utworów.
+- Możliwość przejścia do następnego utworu.
+- Usuwanie utworów z kolejki.
+- Reset playlisty.
+- Możliwość wymieszania playlisty.
