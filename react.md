@@ -139,3 +139,15 @@ Funkcjonalności:
 - Usuwanie utworów z kolejki.
 - Reset playlisty.
 - Możliwość wymieszania playlisty.
+
+## 12. Zarządzanie zadaniami - *Kanban*
+
+Aplikacja umożliwia zarządzanie zadaniami w formie tablicy *Kanban*. Użytkownik może dodawać nowe zadania oraz przypisywać je do odpowiednich kolumn reprezentujących ich status. Dzięki temu możliwe jest śledzenie postępu pracy nad zadaniami w przejrzysty sposób.
+
+### Struktura
+
+Aplikacja składa się z belki górnej, formularza dodawania nowego zadania i tablicy *Kanban* podzielonej na kolumny. Każda z kolumn zawiera nagłówek oraz listę zadań. Oddzielne komponenty dla formularza, tablicy *Kanban* i poszczególnych kolumn.
+
+### Funkcjonalność
+
+- Możliwość dodania zadań składających się z tytułu oraz opisu i przydzielenia ich do jednej z trzech kolumn - *do zrobienia*, *w trakcie*, *zrobione*.
