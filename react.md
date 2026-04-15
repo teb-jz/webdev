@@ -151,3 +151,5 @@ Aplikacja składa się z belki górnej, formularza dodawania nowego zadania i ta
 ### Funkcjonalność
 
 - Możliwość dodania zadań składających się z tytułu oraz opisu i przydzielenia ich do jednej z trzech kolumn - *do zrobienia*, *w trakcie*, *zrobione*.
+- Możliwość zmiany statusu zadania, usuwania go i modyfikowania treści. Wybór statusu powinien odbywać się poprzez listę wyboru i przyciski *Dalej*/*Wstecz*.
+- Liczniki zadań w danej kolumnie, możliwość filtrowania i sortowania zadań.
