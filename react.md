@@ -153,3 +153,23 @@ Aplikacja składa się z belki górnej, formularza dodawania nowego zadania i ta
 - Możliwość dodania zadań składających się z tytułu oraz opisu i przydzielenia ich do jednej z trzech kolumn - *do zrobienia*, *w trakcie*, *zrobione*.
 - Możliwość zmiany statusu zadania, usuwania go i modyfikowania treści. Wybór statusu powinien odbywać się poprzez listę wyboru i przyciski *Dalej*/*Wstecz*.
 - Liczniki zadań w danej kolumnie, możliwość filtrowania i sortowania zadań.
+- Ukryty panel do zarządzania tablicą *Kanban* - możliwość dodawania, usuwania i modyfikowania kolumn (ich koloru tła, tytułu i kolejności wyświetlania)
+- *Drag & drop* - możliwość przeciągania zadań do poszczególnych kolumn.
+
+### Dokumentacja
+
+W kodzie źródłowym aplikacji konsolowej za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
+
+```
+************************************************************ 
+nazwa funkcji:          <nazwa>
+opis funkcji:           <krótki opis, co robi metoda>
+parametry:              <nazwa i opis pierwszego parametru>
+                        <nazwa i opis drugiego parametru>
+                        ...
+zwracany typ i opis:    <nazwa typu i opis co jest zwracane>
+autor:                  <imię, nazwisko i klasa>
+************************************************************
+```
+
+Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów metody lub zapisać *brak* w przypadku funkcji bezparametrowej.
