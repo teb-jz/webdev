@@ -258,3 +258,79 @@ Dostępne priorytety to **niski**, **średni** i **wysoki**.
 ### Oczekiwany wygląd witryny
 
 ![Strona - p5](img/p6.png)
+
+## 7. Panel zarządzania kontaktami (*)
+
+Witryna internetowa służąca do zarządzania listą kontaktów użytkownika. Umożliwia dodawanie nowych osób wraz z ich danymi, takich jak *numer telefonu*, *adres email* oraz przypisana *grupa*.
+
+### Zawartość
+
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - **Moje kontakty**.
+* Prawidłowo połączony zewnętrzny arkusz stylów i skrypt.
+* Witryna jest podzielona na *semantyczne elementy blokowe*.
+
+	#### Struktura
+
+	- Strona składa się z belki górnej, części głównej oraz belki dolnej.
+	- Belka górna zawiera nagłówek pierwszego poziomu - *Książka kontaktowa* oraz przykładową grafikę związaną z tematyką strony.
+	- Część główna podzielona jest na artykuł i część poboczną.
+	- Artykuł ma w sobie:
+
+		- nagłówek drugiego stopnia - *Lista kontaktów*,
+		- poziomą linię,
+		- sekcję zawierającą listę nienumerowaną kontaktów (*początkowo pustą*).
+
+	- Część poboczna zawiera:
+		- nagłówek drugiego stopnia - *Dodaj kontakt,
+		- formularz, a w nim:
+			- (*imię*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+			- (*nazwisko*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+			- (*numer telefonu*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+			- (*email*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+			- (*grupa*) etykieta, lista wybierania z przykładowymi opcjami (na przykład *znajomi*, *praca*, *rodzina*) oraz element liniowy,
+			- Przycisk - *Dodaj kontakt*, pusty element liniowy.
+
+	- Na stopkę składa się lista numerowana z czterema elementami (dane autora - *imię*, *nazwisko*, *klasa* i *przykładowy PESEL*)
+
+### Wygląd
+
+- Strona powinna w jak największym stopniu przypominać nowoczesny panel.
+- Style zdefiniowane w oddzielnym pliku *CSS* o nazwie **index** i odpowiednim rozszerzeniu.
+- Krój czcionki: **'Helvetica'**.
+- Należy zadbać o podstawową responsywność, korzystając z **flexbox**.
+- Dany kontakt po najechaniu na niego kursorem zostaje wyróżniony (*na przykład inny kolor tła i tekstu*).
+
+### Działanie
+
+- #### Pobieranie wartości
+
+	Po naciśnięciu przycisku **Dodaj kontakt** pobierane są wartości pól formularza:
+	- *imię*,
+	- *nazwisko*,
+	- *numer telefonu*,
+	- *email*,
+	- *grupa*.
+
+- #### Walidacja danych
+
+	Jeżeli:
+	- pole *imię* jest puste wyświetl komunikat: ${\textsf{\color{red}Wpisz imię!}}$,
+	- pole *nazwisko* jest puste wyświetl komunikat: ${\textsf{\color{red}Wpisz nazwisko!}}$,
+	- pole *numer telefonu* jest puste wyświetl komunikat: ${\textsf{\color{red}Wpisz numer telefonu!}}$,
+	- *numer telefonu* jest krótszy niż *9* znaków wyświetl komunikat: ${\textsf{\color{red}Wpisz prawidłowy numer telefonu!}}$,
+	- *email* nie zawiera znaku `@` wyświetl komunikat: ${\textsf{\color{red}Wpisz prawidłowy adres email!}}$,
+		<details>
+			<summary>Podpowiedź</summary>
+			Skorzystaj z metody value.includes('@')`, gdzie `value` oznacza wartość pola.
+		</details>
+	- wszystkie dane są prawidłowe wyświetl komunikat pod przyciskiem: ${\textsf{\color{green}Dodano kontakt!}}$.
+
+	Komunikaty powinny zostać wyświetlone w elementach liniowych pod odpowiednimi polami wprowadzania. W przypadku sukcesu wszelkie komunikaty błędu są usuwane.
+
+- #### Wyświetlanie listy kontaktów
+
+	Jeżeli dane pomyślnie przeszły walidację, do listy dodawany jest element `<li>`, o zawartości w formacie:
+
+	`<Imię> <Nazwisko> | <Telefon> | <Email> | <Grupa>`.
