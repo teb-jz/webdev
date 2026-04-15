@@ -158,7 +158,7 @@ Aplikacja składa się z belki górnej, formularza dodawania nowego zadania i ta
 
 ### Dokumentacja
 
-W kodzie źródłowym aplikacji konsolowej za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
+W kodzie źródłowym aplikacji za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
 
 ```
 ************************************************************ 
@@ -172,4 +172,4 @@ autor:                  <imię, nazwisko i klasa>
 ************************************************************
 ```
 
-Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów metody lub zapisać *brak* w przypadku funkcji bezparametrowej.
+Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów funkcji lub zapisać *brak* w przypadku funkcji bezparametrowej.
