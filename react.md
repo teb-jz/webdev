@@ -140,7 +140,7 @@ Funkcjonalności:
 - Reset playlisty.
 - Możliwość wymieszania playlisty.
 
-## 12. Zarządzanie zadaniami - *Kanban*
+## 12. Zarządzanie zadaniami - *Kanban* (*)
 
 Aplikacja umożliwia zarządzanie zadaniami w formie tablicy *Kanban*. Użytkownik może dodawać nowe zadania oraz przypisywać je do odpowiednich kolumn reprezentujących ich status. Dzięki temu możliwe jest śledzenie postępu pracy nad zadaniami w przejrzysty sposób.
 
@@ -158,7 +158,7 @@ Aplikacja składa się z belki górnej, formularza dodawania nowego zadania i ta
 
 ### Dokumentacja
 
-W kodzie źródłowym aplikacji za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
+W kodzie źródłowym aplikacji konsolowej za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
 
 ```
 ************************************************************ 
@@ -172,4 +172,37 @@ autor:                  <imię, nazwisko i klasa>
 ************************************************************
 ```
 
-Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów funkcji lub zapisać *brak* w przypadku funkcji bezparametrowej.
+Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów metody lub zapisać *brak* w przypadku funkcji bezparametrowej.
+
+## 13. System osiągnięć
+
+Aplikacja umożliwia śledzenie postępów użytkownika poprzez system osiągnięć. Użytkownik może wykonywać różne akcje, które odblokowują kolejne osiągnięcia. System pokazuje aktualny postęp oraz informuje o zdobytych nagrodach.
+
+### Funkcjonalność
+
+- Możliwość dodawania zadań składających się z tytułu oraz opisu. Zadania trafiają na listę i mogą być oznaczane jako wykonane lub niewykonane.
+- Możliwość zmiany statusu zadania (niewykonane / wykonane), usuwania go oraz edytowania jego treści.
+- System osiągnięć powiązany z aktywnością użytkownika - osiągnięcia odblokowywane są na podstawie:
+    - liczby dodanych zadań,
+    - liczby wykonanych zadań.
+- Wyświetlanie listy osiągnięć wraz z ich statusem (zablokowane / odblokowane) oraz wizualnym wyróżnieniem zdobytych osiągnięć.
+- Licznik postępu informujący o liczbie zdobytych osiągnięć oraz możliwością wyświetlenia aktualnych statystyk użytkownika (na przykład liczba wszystkich zadań, liczba wykonanych zadań).
+- Możliwość resetowania danych aplikacji, co powoduje usunięcie wszystkich zadań oraz zresetowanie osiągnięć.
+
+### Dokumentacja
+
+W kodzie źródłowym aplikacji konsolowej za pomocą komentarza utwórz nagłówek głównych funkcji, według wzoru.
+
+```
+************************************************************ 
+nazwa funkcji:          <nazwa>
+opis funkcji:           <krótki opis, co robi metoda>
+parametry:              <nazwa i opis pierwszego parametru>
+                        <nazwa i opis drugiego parametru>
+                        ...
+zwracany typ i opis:    <nazwa typu i opis co jest zwracane>
+autor:                  <imię, nazwisko i klasa>
+************************************************************
+```
+
+Komentarz powinien znaleźć się nad lub pod nazwą funkcji. W miejscu nawiasów ostrych (*<>*) należy podać odpowiednie opisy. W sekcji parametry należy umieścić opis wszystkich argumentów metody lub zapisać *brak* w przypadku funkcji bezparametrowej.
