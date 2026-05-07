@@ -271,28 +271,28 @@ Witryna internetowa służąca do zarządzania listą kontaktów użytkownika. U
 * Prawidłowo połączony zewnętrzny arkusz stylów i skrypt.
 * Witryna jest podzielona na *semantyczne elementy blokowe*.
 
-	#### Struktura
+#### Struktura
 
-	- Strona składa się z belki górnej, części głównej oraz belki dolnej.
-	- Belka górna zawiera nagłówek pierwszego poziomu - *Książka kontaktowa* oraz przykładową grafikę związaną z tematyką strony.
-	- Część główna podzielona jest na artykuł i część poboczną.
-	- Artykuł ma w sobie:
+- Strona składa się z belki górnej, części głównej oraz belki dolnej.
+- Belka górna zawiera nagłówek pierwszego poziomu - *Książka kontaktowa* oraz przykładową grafikę związaną z tematyką strony.
+- Część główna podzielona jest na artykuł i część poboczną.
+- Artykuł ma w sobie:
 
-		- nagłówek drugiego stopnia - *Lista kontaktów*,
-		- poziomą linię,
-		- sekcję zawierającą listę nienumerowaną kontaktów (*początkowo pustą*).
+	- nagłówek drugiego stopnia - *Lista kontaktów*,
+	- poziomą linię,
+	- sekcję zawierającą listę nienumerowaną kontaktów (*początkowo pustą*).
 
-	- Część poboczna zawiera:
-		- nagłówek drugiego stopnia - *Dodaj kontakt,
-		- formularz, a w nim:
-			- (*imię*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
-			- (*nazwisko*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
-			- (*numer telefonu*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
-			- (*email*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
-			- (*grupa*) etykieta, lista wybierania z przykładowymi opcjami (na przykład *znajomi*, *praca*, *rodzina*) oraz element liniowy,
-			- Przycisk - *Dodaj kontakt*, pusty element liniowy.
+- Część poboczna zawiera:
+	- nagłówek drugiego stopnia - *Dodaj kontakt,
+	- formularz, a w nim:
+		- (*imię*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		- (*nazwisko*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		- (*numer telefonu*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		- (*email*) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		- (*grupa*) etykieta, lista wybierania z przykładowymi opcjami (na przykład *znajomi*, *praca*, *rodzina*) oraz element liniowy,
+		- Przycisk - *Dodaj kontakt*, pusty element liniowy.
 
-	- Na stopkę składa się lista numerowana z czterema elementami (dane autora - *imię*, *nazwisko*, *klasa* i *przykładowy PESEL*)
+- Na stopkę składa się lista numerowana z czterema elementami (dane autora - *imię*, *nazwisko*, *klasa* i *przykładowy PESEL*)
 
 ### Wygląd
 
@@ -334,3 +334,76 @@ Witryna internetowa służąca do zarządzania listą kontaktów użytkownika. U
 	Jeżeli dane pomyślnie przeszły walidację, do listy dodawany jest element `<li>`, o zawartości w formacie:
 
 	`<Imię> <Nazwisko> | <Telefon> | <Email> | <Grupa>`.
+
+## 8. Panel rezerwacji wizyt (*)
+
+Witryna internetowa służąca do zarządzania rezerwacją wizyt w salonie kosmetycznym. Umożliwia dodawanie nowych wizyt wraz z danymi klienta, wybraną usługą oraz terminem spotkania.
+
+### Zawartość
+
+* Witryna napisana w języku *HTML5*, w pliku o nazwie **index** z odpowiednim rozszerzeniem.
+* Zadeklarowany język zawartości witryny - **polski**.
+* Tytuł strony widoczny na karcie przeglądarki - Rezerwacja wizyt.
+* Prawidłowo połączony zewnętrzny arkusz stylów i skrypt.
+* Witryna jest podzielona na semantyczne elementy blokowe.
+
+### Struktura
+
+* Strona składa się z belki górnej, części głównej oraz belki dolnej.
+* Belka górna zawiera:
+	* nagłówek pierwszego poziomu - System rezerwacji
+	* przykładową grafikę związaną z usługami lub kalendarzem.
+* Część główna podzielona jest na artykuł i część poboczną.
+* Artykuł ma w sobie:
+	* nagłówek drugiego stopnia - Lista wizyt
+	* poziomą linię
+	* sekcję zawierającą listę nienumerowaną wizyt (początkowo pustą)
+* Część poboczna zawiera
+	* nagłówek drugiego stopnia - Dodaj wizytę
+	* formularz, a w nim:
+		* (imię klienta) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		* (nazwisko klienta) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		* (usługa) etykieta, lista wybierania z przykładowymi opcjami (na przykład strzyżenie, manicure, masaż) oraz pusty element liniowy,
+		* (data wizyty) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		* (godzina wizyty) etykieta, pole wprowadzania o odpowiednim typie oraz pusty element liniowy,
+		* Przycisk - Zarezerwuj wizytę, pusty element liniowy.
+* Na stopkę składa się lista numerowana z czterema elementami (dane autora - imię, nazwisko, klasa i przykładowy PESEL).
+
+### Wygląd
+
+* Strona powinna w jak największym stopniu przypominać nowoczesny panel.
+* Style zdefiniowane w oddzielnym pliku CSS o nazwie index i odpowiednim rozszerzeniu.
+* Krój czcionki: 'Helvetica'.
+* Należy zadbać o podstawową responsywność, korzystając z flexbox.
+* Dana wizyta po najechaniu na nią kursorem zostaje wyróżniona (na przykład inny kolor tła i tekstu).
+
+### Działanie
+
+* #### Pobieranie wartości
+
+	Po naciśnięciu przycisku Zarezerwuj wizytę pobierane są wartości pól formularza:
+	* imię klienta,
+	* nazwisko klienta,
+	* usługa,
+	* data wizyty,
+	* godzina wizyty.
+
+* #### Walidacja danych
+
+	Jeżeli:
+
+	* pole imię klienta jest puste wyświetl komunikat: ${\textsf{\color{red}Wpisz imię klienta!}}$
+	* pole nazwisko klienta jest puste wyświetl komunikat: ${\textsf{\color{red}Wpisz nazwisko klienta!}}$
+	* pole data wizyty jest puste wyświetl komunikat: ${\textsf{\color{red}Wybierz datę wizyty!}}$
+	* pole godzina wizyty jest puste wyświetl komunikat: ${\textsf{\color{red}Wybierz godzinę wizyty!}}$
+	* wszystkie dane są prawidłowe wyświetl komunikat pod przyciskiem: ${\textsf{\color{green}Dodano rezerwację!}}$
+	
+	W przypadku sukcesu wszelkie komunikaty błędu są usuwane.
+
+* #### Wyświetlanie listy wizyt
+
+Jeżeli dane pomyślnie przeszły walidację, do listy dodawany jest element `<li>`, o zawartości w formacie:
+
+`<Imię> <Nazwisko> | <Usługa> | <Data wizyty> <Godzina wizyty>`
+
+Po dodaniu wizyty pola formularza zostają wyczyszczone.
