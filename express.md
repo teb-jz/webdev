@@ -254,3 +254,13 @@ Wydarzenia zapisywane są w tablicy i posiadają *id*, *nazwę*, *datę* oraz *m
 Nie można zapisać się na wydarzenie, jeśli liczba uczestników osiągnęła maksymalny limit. Nie można również zapisać tego samego adresu email dwa razy na to samo wydarzenie. Dane są walidowane po stronie serwera.
 
 Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
+
+## 6. System głosowania
+
+Aplikacja umożliwia utworzenie ankiety oraz oddawanie głosów. Użytkownik może utworzyć ankietę, podając pytanie oraz przynajmniej dwie możliwe odpowiedzi. Pytanie powinno mieć przynajmniej dziesięć znaków, a każda odpowiedź przynajmniej trzy znaki. Dane są walidowane po stronie serwera.
+
+Każda ankieta posiada *id*, *pytanie* oraz przynajmniej dwie *odpowiedzi* wraz z liczbą głosów. Użytkownik może oddać głos na jedną z odpowiedzi na podstawie *id* ankiety.
+
+System powinien umożliwiać wyświetlenie listy ankiet oraz wyników głosowania dla każdej z nich.
+
+Odpowiedzi zwracane są jako pliki HTML przy pomocy `sendFile()`.
